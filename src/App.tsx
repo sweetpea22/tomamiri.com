@@ -1,25 +1,49 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider, createTheme } from "@chainsafe/common-theme";
+import {
+  CssBaseline, Router
+} from "@chainsafe/common-components"
+import Routes from "./Components/Routes";
 
+
+const theme = createTheme({
+  globalStyling: {
+    body: {
+      overflowX: "hidden",
+      background: "#dddddd",
+      fontFamily: "IBM Plex Sans",
+    }
+  },
+  themeConfig: {
+    palette: {
+      primary: {
+        main: "#a01892",
+      },
+      secondary: {
+        main: "#eeeeee"
+      },
+      common: {
+        black: {
+          main: "#333333"
+        },
+        white: {
+          main: "#ffffff"
+        }
+      }
+    }
+  }
+})
 function App() {
+  // const handleClick = () => {
+  //   window[`scrollTo`]({ top: 0, behavior: `smooth` })
+  // }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Router>
+        <Routes />
+      </Router>
+    </ThemeProvider>
   );
 }
 
