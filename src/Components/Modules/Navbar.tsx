@@ -44,10 +44,10 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       fontSize: "20px",
       cursor: "pointer",
       padding: "1rem",
-      color: "#000",
-      transition: "0.4s ease-in",
+      color: palette.primary.main,
+      transition: "all 0.1s ease-in",
       '&:hover': {
-        fontWeight: "bold",
+        color: "#e872dc",
       },
     },
     menuToggle: {
@@ -59,12 +59,11 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       width: "40px",
       marginTop: "13px",
       zIndex: 400000,
-
       height: "40px",
       transition: "transform 0.4s ease-in",
     },
     wrapper: {
-      background: "black",
+      background: palette.primary.main,
       position: "absolute",
       margin: "-1rem 0",
       left: 0,
@@ -92,13 +91,13 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
     mobileLink: {
       textDecoration: "none",
       fontSize: "3rem",
-      color: palette.primary.light,
+      color: palette.common.white.main,
       transition: "0.1s ease-in-out",
       '&:hover': {
-        fontWeight: "bold",
+        color: palette.common.white.main,
       },
       '&:active': {
-        color: palette.additional["yellow"][4],
+        color: palette.secondary.main,
       },
     },
   })
@@ -135,10 +134,8 @@ const NavBar: React.FC = () => {
         </div>
 
         {!isMobile && <Grid item className={classes.linksMenu} >
-          <Link onClick={() => redirect('/services')} className={classes.link}>Services</Link>
-          <Link onClick={() => redirect('/work')} className={classes.link}>Work</Link>
-          <Link onClick={() => redirect('/careers')} className={classes.link}>Careers</Link>
-          <Link onClick={() => redirect('/hireus')} className={classes.link}>Hire Us</Link>
+          <a href="https://twitter.com/tomoamiri" target="_blank" rel="noopener noreferrer" className={classes.link}>Twitter</a>
+          <a href="https://dribbble.com/tomoamiri" target="_blank" rel="noopener noreferrer" className={classes.link}>Dribble</a>
         </Grid>
         }
       </Grid>
@@ -149,19 +146,10 @@ const NavBar: React.FC = () => {
           </div>
           <ul className={classes.mobileLinkContainer}>
             <div className={classes.mobileLinkWrapper} >
-              <Link className={classes.mobileLink} onClick={() => redirect('/')}>Home</Link>
+              <a href="https://twitter.com/tomoamiri" target="_blank" rel="noopener noreferrer" className={classes.mobileLink}>Twitter</a>
             </div>
             <div className={classes.mobileLinkWrapper} >
-              <Link className={classes.mobileLink} onClick={() => redirect('/services')}>Services</Link>
-            </div>
-            <div className={classes.mobileLinkWrapper} >
-              <Link className={classes.mobileLink} onClick={() => redirect('/work')}>Work</Link>
-            </div>
-            <div className={classes.mobileLinkWrapper} >
-              <Link className={classes.mobileLink} onClick={() => redirect('/careers')}>Careers</Link>
-            </div>
-            <div className={classes.mobileLinkWrapper} >
-              <Link className={classes.mobileLink} onClick={() => redirect('/hireus')}>Hire Us</Link>
+              <a href="https://dribbble.com/tomoamiri" target="_blank" rel="noopener noreferrer" className={classes.mobileLink}>Dribble</a>
             </div>
           </ul>
         </div>
