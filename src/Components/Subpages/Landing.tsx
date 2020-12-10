@@ -41,6 +41,7 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
     text: {
       fontSize: "64px",
       fontWeight: "bold",
+      fontFamily: 'IBM Plex Sans Condensed',
       lineHeight: "80px",
       color: palette.common.black.main,
       [breakpoints.down('md')]: {

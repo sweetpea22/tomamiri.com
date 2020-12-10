@@ -11,7 +11,7 @@ const theme = createTheme({
     body: {
       overflowX: "hidden",
       background: "#dddddd",
-      fontFamily: "IBM Plex Sans",
+      fontFamily: 'IBM Plex Sans Condensed',
     }
   },
   themeConfig: {
