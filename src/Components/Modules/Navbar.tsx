@@ -12,7 +12,6 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       justifyContent: "flex-start",
       height: constants.generalUnit * 9,
       position: "fixed",
-      padding: "0.7rem",
       zIndex: zIndex?.layer4,
       background: "#fafafa",
       [breakpoints.down('sm')]: {
@@ -38,6 +37,14 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       color: palette.common.black.main,
       marginLeft: constants.generalUnit,
       textDecoration: "none",
+    },
+    linkWrapper: {
+      background: palette.secondary.main,
+      padding: "0.6rem",
+      position: "relative",
+      zIndex: zIndex?.background,
+      display: "flex",
+      alignItems: "center",
     },
     link: {
       textDecoration: "none",
@@ -71,7 +78,10 @@ const NavBar: React.FC = () => {
           </Grid>
         </Grid>
         <Grid item className={classes.linksMenu} >
-          <a href="https://twitter.com/tomoamiri" target="_blank" rel="noopener noreferrer" className={classes.link}>About</a>
+          <div className={classes.linkWrapper}>
+
+            <a href="https://twitter.com/tomoamiri" target="_blank" rel="noopener noreferrer" className={classes.link}>About</a>
+          </div>
         </Grid>
       </Grid>
     </nav >
