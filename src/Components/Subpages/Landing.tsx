@@ -25,9 +25,7 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       },
     },
     titleWrapper: {
-      [breakpoints.up('lg')]: {
-        // marginLeft: "6rem",
-      }
+      maxWidth: "100%",
     },
     titleText: {
       fontSize: "80px",
@@ -40,10 +38,6 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
         fontSize: "48px",
         lineHeight: "64px",
       },
-      [breakpoints.down('sm')]: {
-        fontSize: "40px",
-        lineHeight: "60px",
-      }
     },
     cursiveContainer: {
       display: "flex",
@@ -127,6 +121,14 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       fontSize: "30px",
       marginBottom: "1.5rem",
     },
+    arrow: {
+      [breakpoints.down('md')]: {
+        display: "none",
+      },
+    },
+    cursive: {
+      width: "80%",
+    }
   })
 })
 
@@ -139,13 +141,13 @@ const Landing: React.FC = () => {
           <Grid container xs={12} className={classes.contentContainer}>
             <div className={classes.whiteSquare}></div>
             <div className={classes.darkSquare}></div>
-            <Grid item xs={12} lg={5} className={classes.introWrapper}>
+            <Grid item xs={12} md={5} lg={5} className={classes.introWrapper}>
               <div className={classes.titleWrapper}>
-                <p className={classes.titleText}><span>Hey, I'm Tom</span></p>
+                <p className={classes.titleText}>Hey, I'm Tom</p>
               </div>
               <div className={classes.cursiveContainer} >
-                <img src={cursive} alt="Some things I'm passionate about" style={{ width: "80%" }} />
-                <img src={arrow} alt="hand-drawn arrow" />
+                <img src={cursive} alt="Some things I'm passionate about" className={classes.cursive} />
+                <img className={classes.arrow} src={arrow} alt="hand-drawn arrow" />
                 <div className={classes.descriptionWrapper}>
                   <div>
                     <p className={classes.bodyText}>Web3</p>
@@ -155,7 +157,7 @@ const Landing: React.FC = () => {
                 </div>
               </div>
             </Grid>
-            <Grid item xs={12} lg={3}>
+            <Grid item xs={12} md={5} lg={3}>
               <img src="/graphics/landing/portrait.jpg" />
             </Grid>
           </Grid>

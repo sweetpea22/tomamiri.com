@@ -42,7 +42,7 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       background: palette.secondary.main,
       padding: "0.6rem",
       position: "relative",
-      zIndex: zIndex?.background,
+      zIndex: zIndex?.layer3,
       display: "flex",
       alignItems: "center",
     },
@@ -80,8 +80,7 @@ const NavBar: React.FC = () => {
         </Grid>
         <Grid item className={classes.linksMenu} >
           <div className={classes.linkWrapper}>
-
-            <a href="https://twitter.com/tomoamiri" target="_blank" rel="noopener noreferrer" className={classes.link}>About</a>
+            <Link onClick={() => redirect('/about')} className={classes.link}>About</Link>
           </div>
         </Grid>
       </Grid>

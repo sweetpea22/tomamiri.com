@@ -10,7 +10,7 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
     wrapper: {
       maxWidth: "2560px",
       display: "flex",
-      margin: "0 4%",
+      margin: "0",
       paddingTop: "10vh",
       flexDirection: "column",
       justifyContent: "center",
@@ -30,9 +30,19 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
     },
     bodyText: {
       fontSize: "28px",
-      maxWidth: "700px",
+      lineHeight: "38px",
+      maxWidth: "630px",
+      fontWeight: "lighter",
+      [breakpoints.up('lg')]: {
+        marginLeft: "5rem",
+      },
     },
-
+    workLine: {
+      [breakpoints.up('lg')]: {
+        position: "absolute",
+        right: -100,
+      }
+    },
   })
 })
 
@@ -48,11 +58,11 @@ const About: React.FC = () => {
                 I’m a self-taught designer with research, design, communication, and strategy skills. I’m looking to join a fast-paced team disrupting some corner of the universe.
               </p>
             </div>
-            <Grid item xs={12} lg={8} >
+            <Grid item xs={12} lg={6} >
               <img src="/graphics/landing/hand.png" alt="Hand bursting through water, pushing a blackbox out into a solid wave" />
             </Grid>
-            <Grid item xs={4} >
-              <img src={lines} alt="vertical line pointing to Thomas Amiri projects section" />
+            <Grid item >
+              <img className={classes.workLine} src={lines} alt="vertical line pointing to Thomas Amiri projects section" />
             </Grid>
           </Grid>
         </div>
