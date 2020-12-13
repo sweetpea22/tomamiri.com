@@ -11,7 +11,6 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      bottom: 0,
       zIndex: zIndex?.layer4,
       background: palette.secondary.main,
       [breakpoints.down('sm')]: {

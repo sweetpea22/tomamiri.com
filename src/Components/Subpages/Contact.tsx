@@ -2,11 +2,11 @@ import React from 'react'
 import Section from "../Modules/Section";
 import { createStyles, ITheme, makeStyles } from "@chainsafe/common-theme";
 import { Grid } from "@chainsafe/common-components";
-import emailIcon from "./svg/email.svg";
+// import emailIcon from "./svg/email.svg";
 import dribIcon from "./svg/dribbble.svg";
 import twitterIcon from "./svg/twitter.svg";
 
-const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: ITheme) => {
+const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
 
   return createStyles({
     wrapper: {
