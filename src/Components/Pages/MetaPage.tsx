@@ -8,6 +8,7 @@ const MetaPage: React.FC = () => {
     <>
       <NavBar />
       <MetaDetail />
+      <Footer />
     </>
   )
 }

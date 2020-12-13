@@ -40,7 +40,7 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       },
     },
     projectWrapper: {
-      background: palette.common.white.main,
+      // background: palette.common.white.main,
       height: "auto",
       width: "85%",
       display: "flex",
