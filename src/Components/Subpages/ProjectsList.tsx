@@ -40,13 +40,14 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       },
     },
     projectWrapper: {
-      // background: palette.common.white.main,
+      background: palette.secondary.main,
       height: "auto",
       width: "85%",
       display: "flex",
       alignItems: "center",
       padding: "2rem",
       margin: "2rem 0",
+      // border: `1px solid ${palette.additional["gray"][7]}`
     },
     projectContentWrapper: {
       display: "grid",
@@ -121,7 +122,6 @@ const ProjectsList: React.FC = () => {
                     <Link onClick={() => redirect(p.pageUrl)} className={classes.projectLink}>
                       <img src={pageButton} alt={`Click to access page about ${p.name}`} />
                     </Link>
-
                   </div>
                 </Grid>
               </div>

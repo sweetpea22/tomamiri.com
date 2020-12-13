@@ -23,7 +23,7 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       position: "relative",
       display: "flex",
       flexDirection: "column",
-      alignItems: "flex-start",
+      alignItems: "center",
       justifyContent: "center",
       paddingBottom: "5rem",
       [breakpoints.up('md')]: {
@@ -72,14 +72,11 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
     },
     img: {
       position: "relative",
-      left: "25%",
-      transform: "translate(-25%)",
+      left: "50%",
+      transform: "translate(-50%)",
       width: "30%",
     },
     bodyText: {
-      // fontSize: "36px",
-      // lineHeight: "48px",
-      // maxWidth: "900px",
       fontSize: "20px",
       lineHeight: "30px",
       maxWidth: "600px",

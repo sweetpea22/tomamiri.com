@@ -71,9 +71,9 @@ const About: React.FC = () => {
               <Grid item xs={12} md={5}  >
                 <img src="/graphics/landing/hand.png" alt="Hand bursting through water, pushing a blackbox out into a solid wave" />
               </Grid>
-              <Grid item >
+              {/* <Grid item >
                 <img className={classes.workLine} src={lines} alt="vertical line pointing to Thomas Amiri projects section" />
-              </Grid>
+              </Grid> */}
             </Grid >
           </Grid>
         </div>
