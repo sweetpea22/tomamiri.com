@@ -10,8 +10,8 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
     wrapper: {
       maxWidth: "2560px",
       display: "flex",
-      margin: "0",
       paddingTop: "10vh",
+      margin: "0% 10% 0 10%",
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
@@ -27,6 +27,12 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
     },
     contentContainer: {
       position: "relative",
+      display: "flex",
+      flexDirection: "column",
+
+    },
+    imgContainer: {
+      maxWidth: "80%",
     },
     bodyText: {
       fontSize: "28px",
@@ -40,8 +46,11 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
     workLine: {
       [breakpoints.up('lg')]: {
         position: "absolute",
-        right: -100,
-      }
+        right: 50,
+      },
+      [breakpoints.down('lg')]: {
+        right: 0,
+      },
     },
   })
 })
@@ -52,18 +61,20 @@ const About: React.FC = () => {
     <>
       <Section>
         <div className={classes.wrapper}>
-          <Grid container xs={8} className={classes.contentContainer}>
+          <Grid container className={classes.contentContainer}>
             <div className={classes.titleWrapper}>
               <p className={classes.bodyText}>
                 I’m a self-taught designer with research, design, communication, and strategy skills. I’m looking to join a fast-paced team disrupting some corner of the universe.
               </p>
             </div>
-            <Grid item xs={12} lg={6} >
-              <img src="/graphics/landing/hand.png" alt="Hand bursting through water, pushing a blackbox out into a solid wave" />
-            </Grid>
-            <Grid item >
-              <img className={classes.workLine} src={lines} alt="vertical line pointing to Thomas Amiri projects section" />
-            </Grid>
+            <Grid container className={classes.imgContainer}>
+              <Grid item xs={12} md={5}  >
+                <img src="/graphics/landing/hand.png" alt="Hand bursting through water, pushing a blackbox out into a solid wave" />
+              </Grid>
+              <Grid item >
+                <img className={classes.workLine} src={lines} alt="vertical line pointing to Thomas Amiri projects section" />
+              </Grid>
+            </Grid >
           </Grid>
         </div>
       </Section>

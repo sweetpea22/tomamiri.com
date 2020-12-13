@@ -69,14 +69,10 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       "& > p": {
         fontWeight: "lighter",
         marginBottom: "2rem",
-        fontSize: "20px",
-        lineHeight: "28px",
-        maxWidth: "200px",
+        fontSize: "24px",
+        lineHeight: "32px",
+        maxWidth: "320px",
       },
-      "& > img": {
-        maxHeight: "30px",
-
-      }
     },
     projectLink: {
       transition: "all 0.3s ease-out",
@@ -84,7 +80,12 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
         transform: "translateY(-4px)",
       },
       "&:active": {
-        color: ""
+        color: palette.primary.light,
+      },
+      "& > img": {
+        maxHeight: "30px",
+        width: "30px",
+        height: "30px",
       }
     }
   })
@@ -104,7 +105,7 @@ const ProjectsList: React.FC = () => {
                 <div className={classes.projectTextWrapper}>
                   <h1>Meta-alert</h1>
                   <p>Notifications for your favourite web3 gateway</p>
-                  <Link onClick={() => redirect('/meta-alert')}>
+                  <Link onClick={() => redirect('/meta-alert')} className={classes.projectLink}>
                     <img src={pageButton} alt="Click to access page about Meta-alert" />
                   </Link>
                 </div>
@@ -117,7 +118,7 @@ const ProjectsList: React.FC = () => {
                   <div className={classes.projectTextWrapper}>
                     <h1>{p.name}</h1>
                     <p>{p.desc}</p>
-                    <Link onClick={() => redirect('/meta-alert')} className={classes.projectLink}>
+                    <Link onClick={() => redirect(p.pageUrl)} className={classes.projectLink}>
                       <img src={pageButton} alt={`Click to access page about ${p.name}`} />
                     </Link>
 
