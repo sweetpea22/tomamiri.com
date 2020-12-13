@@ -51,7 +51,8 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       fontSize: "20px",
       cursor: "pointer",
       padding: "1rem",
-      color: palette.primary.main,
+      color: palette.common.black.main,
+      fontWeight: "lighter",
       transition: "all 0.1s ease-in",
       '&:hover': {
         color: "#e872dc",
