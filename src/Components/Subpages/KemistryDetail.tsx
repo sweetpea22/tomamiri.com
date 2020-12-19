@@ -12,22 +12,18 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       paddingTop: "10vh",
       margin: "0% 10% 0 10%",
       flexDirection: "column",
-      // justifyContent: "center",
-      // alignItems: "center",
       [breakpoints.up('lg')]: {
         margin: "0 10% 0 10%",
       },
+      [breakpoints.up('xl')]: {
+        justifyContent: "center",
+      }
     },
     contentContainer: {
       position: "relative",
       display: "flex",
       flexDirection: "column",
-      // alignItems: "center",
-      // justifyContent: "center",
       paddingBottom: "5rem",
-      [breakpoints.up('md')]: {
-        minHeight: "85vh",
-      }
     },
     titleWrapper: {
       display: "flex",
@@ -135,7 +131,7 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
         }
       },
     },
-  
+
   })
 })
 
@@ -204,12 +200,12 @@ const KemistryDetail: React.FC = () => {
             <div className={classes.mockupContainer}>
               <img src="/graphics/kemistry/lastmock.png" className={classes.mockup} alt="" />
             </div>
-            <div className={classes.linkWrapper}>
-              <Link onClick={() => redirect('/criterion')}>
-                <p className={classes.link}>Check out next project &gt;</p>
-              </Link>
-            </div>
           </Grid>
+          <div className={classes.linkWrapper}>
+            <Link onClick={() => redirect('/criterion')}>
+              <p className={classes.link}>Check out next project &gt;</p>
+            </Link>
+          </div>
         </div>
       </Section>
     </>
