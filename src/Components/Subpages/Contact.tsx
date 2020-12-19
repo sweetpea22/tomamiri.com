@@ -2,12 +2,10 @@ import React from 'react'
 import Section from "../Modules/Section";
 import { createStyles, ITheme, makeStyles } from "@chainsafe/common-theme";
 import { Grid } from "@chainsafe/common-components";
-// import emailIcon from "./svg/email.svg";
 import dribIcon from "./svg/dribbble.svg";
 import twitterIcon from "./svg/twitter.svg";
 
 const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
-
   return createStyles({
     wrapper: {
       maxWidth: "2560px",
@@ -27,8 +25,10 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
     contentContainer: {
       display: "flex",
       alignItems: "center",
-      justifyContent: "center",
-
+      justifyContent: "flex-start",
+      [breakpoints.up('lg')]: {
+        width: "70%",
+      }
     },
     img: {
       width: "100%",
