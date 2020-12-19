@@ -2,9 +2,6 @@ import React from 'react'
 import Section from "../Modules/Section";
 import { createStyles, ITheme, makeStyles } from "@chainsafe/common-theme";
 import { Grid } from "@chainsafe/common-components";
-import cursive from "./svg/cursive.svg";
-import arrow from "./svg/arrow.svg";
-
 
 const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: ITheme) => {
 
@@ -71,32 +68,6 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
     img: {
       maxWidth: "300px",
     },
-    whiteSquare: {
-      background: palette.secondary.main,
-      height: 250,
-      width: 306,
-      left: "18%",
-      top: 120,
-      position: "absolute",
-      zIndex: zIndex?.background,
-    },
-    darkSquare: {
-      background: palette.common.black.main,
-      height: 250,
-      width: 306,
-      position: "absolute",
-      [breakpoints.up('lg')]: {
-        marginTop: "15rem",
-        left: "45rem",
-      },
-      zIndex: zIndex?.background,
-      [breakpoints.up('xl')]: {
-        left: "49rem",
-      },
-      [breakpoints.down('lg')]: {
-        display: "none",
-      },
-    },
     descriptionWrapper: {
       height: 250,
       width: 306,
@@ -121,14 +92,7 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       fontSize: "30px",
       marginBottom: "1.5rem",
     },
-    arrow: {
-      [breakpoints.down('md')]: {
-        display: "none",
-      },
-    },
-    cursive: {
-      width: "80%",
-    }
+
   })
 })
 
@@ -139,27 +103,6 @@ const Landing: React.FC = () => {
       <Section>
         <div className={classes.wrapper}>
           <Grid container xs={12} className={classes.contentContainer}>
-            <div className={classes.whiteSquare}></div>
-            <div className={classes.darkSquare}></div>
-            <Grid item xs={12} md={5} lg={5} className={classes.introWrapper}>
-              <div className={classes.titleWrapper}>
-                <p className={classes.titleText}>Hey, I'm Tom</p>
-              </div>
-              <div className={classes.cursiveContainer} >
-                <img src={cursive} alt="Some things I'm passionate about" className={classes.cursive} />
-                <img className={classes.arrow} src={arrow} alt="hand-drawn arrow" />
-                <div className={classes.descriptionWrapper}>
-                  <div>
-                    <p className={classes.bodyText}>Web3</p>
-                    <p className={classes.bodyText}>Ethereum</p>
-                    <p className={classes.bodyText}>Product Design</p>
-                  </div>
-                </div>
-              </div>
-            </Grid>
-            <Grid item xs={12} md={5} lg={3}>
-              <img src="/graphics/landing/portrait.jpg" />
-            </Grid>
           </Grid>
         </div>
       </Section>

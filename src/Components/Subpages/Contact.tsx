@@ -57,7 +57,8 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
       },
       "& > p": {
         fontWeight: "normal",
-        color: palette.primary.main,
+        color: palette.common.black.main,
+
         marginBottom: "2rem",
         fontSize: "24px",
         lineHeight: "32px",
