@@ -2,7 +2,6 @@ import React from 'react'
 import Section from "../Modules/Section";
 import { createStyles, ITheme, makeStyles } from "@chainsafe/common-theme";
 import { Grid } from "@chainsafe/common-components";
-import lines from "./svg/lines.svg";
 
 
 
@@ -24,6 +23,7 @@ const useMyStyles = () => {
           position: "relative",
           left: "50%",
           transform: "translate(-50%)",
+          minHeight: "50vh",
         },
       },
       titleWrapper: {
@@ -47,7 +47,7 @@ const useMyStyles = () => {
           padding: "5% 15% 0 15%",
         },
         [breakpoints.up('xl')]: {
-          padding: "5% 15% 0 15%",
+          padding: "5% 25% 0 25%",
         },
       },
       jumboText: {
@@ -77,18 +77,7 @@ const useMyStyles = () => {
 
         }
       },
-      imgContainer: {
-        maxWidth: "80%",
-      },
-      workLine: {
-        [breakpoints.up('lg')]: {
-          position: "absolute",
-          right: 50,
-        },
-        [breakpoints.down('lg')]: {
-          right: 0,
-        },
-      },
+
     })
   })
   return useStyles();
@@ -107,14 +96,6 @@ const Landing: React.FC = () => {
               </p>
               <h1 className={classes.jumboText}>Web3<span>/</span>Ethereum<span>/</span>Product Design</h1>
             </div>
-            <Grid container className={classes.imgContainer}>
-              <Grid item xs={12} md={5}  >
-                <img src="/graphics/landing/hand.png" alt="Hand bursting through water, pushing a blackbox out into a solid wave" />
-              </Grid>
-              <Grid item >
-                {/* <img className={classes.workLine} src={lines} alt="vertical line pointing to Thomas Amiri projects section" /> */}
-              </Grid>
-            </Grid >
           </Grid>
         </div>
       </Section>

@@ -2,6 +2,7 @@ import React from 'react'
 import Section from "../Modules/Section";
 import { createStyles, ITheme, makeStyles } from "@chainsafe/common-theme";
 import { Grid } from "@chainsafe/common-components";
+import lines from "./svg/lines.svg";
 
 const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: ITheme) => {
 
@@ -28,9 +29,31 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       position: "relative",
       display: "flex",
       flexDirection: "column",
-
+      [breakpoints.up('lg')]: {
+        padding: "5% 15% 0 15%",
+      },
     },
-
+    imgContainer: {
+      position: "relative",
+    },
+    bodyText: {
+      fontSize: "28px",
+      lineHeight: "38px",
+      maxWidth: "630px",
+      fontWeight: "lighter",
+      [breakpoints.up('lg')]: {
+        marginLeft: "5rem",
+      },
+    },
+    workLine: {
+      [breakpoints.up('lg')]: {
+        position: "absolute",
+        right: 0,
+      },
+      [breakpoints.down('lg')]: {
+        right: 0,
+      },
+    },
   })
 })
 
@@ -41,7 +64,14 @@ const About: React.FC = () => {
       <Section>
         <div className={classes.wrapper}>
           <Grid container className={classes.contentContainer}>
-            
+            <Grid container className={classes.imgContainer}>
+              <Grid item xs={12} md={5} lg={7}  >
+                <img src="/graphics/landing/hand.png" alt="Hand bursting through water, pushing a blackbox out into a solid wave" />
+              </Grid>
+              <Grid item >
+                <img className={classes.workLine} src={lines} alt="vertical line pointing to Thomas Amiri projects section" />
+              </Grid>
+            </Grid >
           </Grid>
         </div>
       </Section>

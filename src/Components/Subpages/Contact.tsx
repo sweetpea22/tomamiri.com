@@ -11,10 +11,21 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
       maxWidth: "2560px",
       display: "flex",
       paddingTop: "10vh",
-      margin: "0% 10% 0 10%",
-      flexDirection: "column",
+      margin: "0% 15% 0 15%",
       justifyContent: "center",
       alignItems: "center",
+      [breakpoints.down('md')]: {
+        padding: 0,
+        margin: 0,
+      }
+    },
+    contentContainer: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "flex-start",
+      [breakpoints.up('lg')]: {
+        width: "80%",
+      },
       [breakpoints.up('xl')]: {
         margin: 0,
         position: "relative",
@@ -22,16 +33,12 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
         transform: "translate(-50%)",
       },
     },
-    contentContainer: {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "flex-start",
-      [breakpoints.up('lg')]: {
-        width: "70%",
-      }
-    },
     img: {
-      width: "100%",
+      width: 465,
+      height: 360,
+      [breakpoints.down('md')]: {
+        
+      },
     },
     bodyText: {
       fontSize: "28px",
@@ -46,7 +53,6 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
       display: "flex",
       flexDirection: "column",
       alignItems: "flex-start",
-      justifyContent: "center",
       "& > h1": {
         fontWeight: 400,
         fontSize: "40px",
@@ -55,7 +61,6 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
       "& > p": {
         fontWeight: "normal",
         color: palette.common.black.main,
-
         marginBottom: "2rem",
         fontSize: "24px",
         lineHeight: "32px",
@@ -88,9 +93,9 @@ const Contact: React.FC = () => {
       <Section>
         <div className={classes.wrapper}>
           <Grid container className={classes.contentContainer}>
-            <div >
+            <Grid item xs={5} lg={5}>
               <img className={classes.img} src="/graphics/landing/phone.png" alt="3d glass phone by thomas amiri" />
-            </div>
+            </Grid>
             <div className={classes.textWrapper}>
               <h1>CONTACT</h1>
               <p>tomoamiri(at)gmail.com</p>

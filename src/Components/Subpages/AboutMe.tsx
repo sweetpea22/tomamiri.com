@@ -23,6 +23,11 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
         left: "50%",
         transform: "translate(-50%)",
       },
+      [breakpoints.up(3800)]: {
+        paddingTop: 0,
+        margin: 0,
+      },
+
     },
     contentContainer: {
       position: "relative",
@@ -37,6 +42,10 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
         width: "auto",
         height: 411,
       },
+      [breakpoints.up(3800)]: {
+        maxHeight: "80vh",
+        paddingBottom: "0",
+      }
     },
     textWrapper: {
       display: "flex",
@@ -47,9 +56,6 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
     },
     title: {
       marginTop: "2rem",
-    },
-    imgContainer: {
-      maxWidth: "80%",
     },
     bodyText: {
       fontSize: "28px",
