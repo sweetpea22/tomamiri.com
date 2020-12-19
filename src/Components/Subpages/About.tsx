@@ -62,18 +62,13 @@ const About: React.FC = () => {
       <Section>
         <div className={classes.wrapper}>
           <Grid container className={classes.contentContainer}>
-            <div className={classes.titleWrapper}>
-              <p className={classes.bodyText}>
-                I’m a self-taught designer with research, design, communication, and strategy skills. I’m looking to join a fast-paced team disrupting some corner of the universe.
-              </p>
-            </div>
             <Grid container className={classes.imgContainer}>
               <Grid item xs={12} md={5}  >
                 <img src="/graphics/landing/hand.png" alt="Hand bursting through water, pushing a blackbox out into a solid wave" />
               </Grid>
-              {/* <Grid item >
+              <Grid item >
                 <img className={classes.workLine} src={lines} alt="vertical line pointing to Thomas Amiri projects section" />
-              </Grid> */}
+              </Grid>
             </Grid >
           </Grid>
         </div>

@@ -47,7 +47,6 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       alignItems: "center",
       padding: "2rem",
       margin: "2rem 0",
-      // border: `1px solid ${palette.additional["gray"][7]}`
     },
     projectContentWrapper: {
       display: "grid",

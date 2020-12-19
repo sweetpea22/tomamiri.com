@@ -24,9 +24,6 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
         transform: "translate(-50%)",
       },
     },
-    titleWrapper: {
-      marginBottom: "5rem",
-    },
     contentContainer: {
       display: "flex",
       alignItems: "center",
@@ -51,7 +48,7 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
       alignItems: "flex-start",
       justifyContent: "center",
       "& > h1": {
-        fontWeight: "bold",
+        fontWeight: 400,
         fontSize: "40px",
         color: palette.common.black.main,
       },
@@ -95,8 +92,7 @@ const Contact: React.FC = () => {
               <img className={classes.img} src="/graphics/landing/phone.png" alt="3d glass phone by thomas amiri" />
             </div>
             <div className={classes.textWrapper}>
-              <h1>Contact</h1>
-              {/* <p><span><img src={emailIcon} alt="email icon" style={{ height: 20, width: 30, }} /></span>Email</p> */}
+              <h1>CONTACT</h1>
               <p>tomoamiri(at)gmail.com</p>
               <div className={classes.iconWrapper}>
                 <a href="https://twitter.com/tomoamiri" target="_blank" rel="noopener noreferrer">
