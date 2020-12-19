@@ -25,7 +25,6 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       },
       [breakpoints.up(3800)]: {
         paddingTop: 0,
-        margin: 0,
       },
 
     },
@@ -53,13 +52,13 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       [breakpoints.up('lg')]: {
         marginRight: "3rem",
       },
-    },
-    title: {
-      marginTop: "2rem",
+      "& > a": {
+        textDecoration: "none",
+      },
     },
     bodyText: {
-      fontSize: "28px",
-      lineHeight: "38px",
+      fontSize: "24px",
+      lineHeight: "32px",
       maxWidth: "630px",
       fontWeight: "lighter",
       marginBottom: constants.generalUnit * 4,
@@ -88,18 +87,17 @@ const AboutMe: React.FC = () => {
         <div className={classes.wrapper}>
           <Grid container className={classes.contentContainer}>
             <div className={classes.textWrapper}>
-              <h1 className={classes.title}>About Me</h1>
               <p className={classes.bodyText}>
                 When I discovered web3 I was excited to see an industry that valued autonomy, privacy, and community empowerment. I also appreciate how this space embraces experimentation and ideas that challenge the status quo.
               </p>
               <p className={classes.bodyText}>
-                That’s why I want to work on dapps that upend legacy apps because I know in the long run web3 experiences will best web2.
+                That’s why I want to work on dapps and contribute to the success of the space because I believe users having control over their data is the future.
               </p>
               <p className={classes.bodyText}>
                 What sets me apart is my sensitivity to both business and user needs, understanding the roadmap while staying open-minded to feedback for better product market fit.
               </p>
               <Link onClick={() => redirect('/meta-alert')}>
-                <p className={classes.link}>Check out my work</p>
+                <p className={classes.link}>Check out some work &gt;</p>
               </Link>
             </div>
             <img src="/graphics/about/portrait.jpg" alt="Thomas Amiri Product designer" />
