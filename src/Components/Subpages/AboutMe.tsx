@@ -2,9 +2,8 @@ import React from 'react'
 import Section from "../Modules/Section";
 import { createStyles, ITheme, makeStyles } from "@chainsafe/common-theme";
 import { Grid, Link, useHistory } from "@chainsafe/common-components";
-import Contact from "./Contact";
 
-const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: ITheme) => {
+const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
 
   return createStyles({
     wrapper: {
@@ -59,9 +58,15 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
     bodyText: {
       fontSize: "24px",
       lineHeight: "32px",
-      maxWidth: "630px",
+      maxWidth: "550px",
       fontWeight: "lighter",
       marginBottom: constants.generalUnit * 4,
+      [breakpoints.down('md')]: {
+        maxWidth: "45%",
+      },
+      [breakpoints.up('xl')]: {
+        maxWidth: 600,
+      },
     },
     link: {
       fontWeight: "bold",
