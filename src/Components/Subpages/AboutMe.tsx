@@ -31,7 +31,6 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
       position: "relative",
       display: "flex",
       alignItems: "center",
-      maxHeight: "100vh",
       paddingBottom: "5rem",
       [breakpoints.up('md')]: {
         minHeight: "85vh",
