@@ -37,7 +37,8 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
       width: 465,
       height: 360,
       [breakpoints.down('md')]: {
-        
+        width: "100%",
+        height: "auto",
       },
     },
     bodyText: {
@@ -57,6 +58,10 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
         fontWeight: 400,
         fontSize: "40px",
         color: palette.common.black.main,
+        [breakpoints.down('md')]: {
+          fontSize: "20px",
+          fontWeight: "bolder",
+        }
       },
       "& > p": {
         fontWeight: "normal",
@@ -65,6 +70,9 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
         fontSize: "24px",
         lineHeight: "32px",
         maxWidth: "320px",
+        [breakpoints.down('md')]: {
+          fontSize: "16px",
+        },
         "& > span": {
           marginRight: constants.generalUnit / 2,
         }
@@ -93,7 +101,7 @@ const Contact: React.FC = () => {
       <Section>
         <div className={classes.wrapper}>
           <Grid container className={classes.contentContainer}>
-            <Grid item xs={5} lg={5}>
+            <Grid item xs={6} lg={5}>
               <img className={classes.img} src="/graphics/landing/phone.png" alt="3d glass phone by thomas amiri" />
             </Grid>
             <div className={classes.textWrapper}>

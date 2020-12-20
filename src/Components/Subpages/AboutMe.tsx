@@ -38,7 +38,7 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
       [breakpoints.up('md')]: {
         minHeight: "85vh",
       },
-      [breakpoints.down('md')]: {
+      [breakpoints.down(1300)]: {
         marginTop: "10vh",
         flexDirection: "column-reverse",
         alignItems: "flex-start",

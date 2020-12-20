@@ -47,10 +47,20 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       alignItems: "center",
       padding: "2rem",
       margin: "2rem 0",
+      [breakpoints.down('md')]: {
+        width: "100%",
+        maxWidth: "100vw",
+        flexDirection: "column",
+      }
     },
     projectContentWrapper: {
       display: "grid",
       gridTemplateColumns: "60% 40%",
+      [breakpoints.down('md')]: {
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+      }
     },
     projectImg: {
       maxWidth: "250px",
