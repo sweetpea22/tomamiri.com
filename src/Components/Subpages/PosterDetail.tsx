@@ -35,48 +35,6 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
         }
       },
     },
-    titleWrapper: {
-      display: "flex",
-      flexDirection: "column",
-      [breakpoints.down('md')]: {
-        width: "80%",
-      }
-    },
-    title: {
-      marginTop: "2rem",
-      fontSize: "55px",
-      fontWeight: "bolder",
-    },
-    subtitleText: {
-      fontSize: "30px",
-      fontWeight: "normal",
-      marginBottom: constants.generalUnit * 2,
-    },
-    subHeading: {
-      fontSize: "45px",
-      fontWeight: "bold",
-      marginBottom: constants.generalUnit * 2,
-    },
-    imgContainer: {
-      display: "flex",
-      justifyItems: "center",
-      alignItems: "center",
-      margin: "3rem 0",
-    },
-    bodyText: {
-      fontSize: "28px",
-      lineHeight: "38px",
-      fontWeight: "normal",
-      color: palette.common.black.main,
-      marginBottom: constants.generalUnit * 4,
-      width: "100%",
-      [breakpoints.up('lg')]: {
-        maxWidth: "750px",
-      },
-      [breakpoints.up('xl')]: {
-        maxWidth: "730px",
-      },
-    },
     linkWrapper: {
       display: "flex",
       justifyContent: "flex-end",
@@ -106,38 +64,31 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
         fontWeight: "bolder",
       }
     },
-    mockupContainer: {
-      display: "flex",
-      maxWidth: "100vw",
-      margin: "4rem 0",
-      [breakpoints.down('lg')]: {
-        width: "100%",
-        maxWidth: "100%",
-      }
 
-    },
   })
 })
 
-const CadenciaDetail: React.FC = () => {
+const PosterDetail: React.FC = () => {
   const classes = useStyles();
-  const { redirect } = useHistory();
+  // const { redirect } = useHistory();
   return (
     <>
       <Section>
         <div className={classes.wrapper}>
           <Grid container className={classes.contentContainer}>
-            <div style={{ display: "flex" }}>
+            <div style={{ display: "flex", flexWrap: "wrap" }}>
               <img src="/graphics/posters/aphorism.png" />
               <img src="/graphics/posters/design-week1.png" />
               <img src="/graphics/posters/design-week2.png" />
-              <img src="/graphics/posters/event-poster3.png" />
+              <img src="/graphics/posters/music-poster.png" />
+              <img src="/graphics/posters/event-poster2.png" />
+              <img src="/graphics/posters/even-poster3.png" />
+              <img src="/graphics/posters/event-poster.png" />
               <img src="/graphics/posters/film-poster.png" />
               <img src="/graphics/posters/film-poster2.png" />
               <img src="/graphics/posters/film-poster3.png" />
-              <img src="/graphics/posters/music-poster.png" />
-              <img src="/graphics/posters/film-poster2.png" />
-              <img src="/graphics/posters/film-poster3.png" />
+              <img src="/graphics/posters/music-poster2.png" />
+              <img src="/graphics/posters/music-poster3.png" />
             </div>
           </Grid>
         </div>
@@ -146,4 +97,4 @@ const CadenciaDetail: React.FC = () => {
   )
 }
 
-export default CadenciaDetail
+export default PosterDetail
