@@ -57,13 +57,6 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       fontWeight: "bold",
       marginBottom: constants.generalUnit * 2,
     },
-    subtitleTextLight: {
-      fontSize: "28px",
-      lineHeight: "38px",
-      fontWeight: "lighter",
-      maxWidth: "630px",
-      marginBottom: constants.generalUnit * 2,
-    },
     imgContainer: {
       display: "flex",
       justifyItems: "center",
@@ -123,9 +116,6 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       }
 
     },
-    mockup: {
-      width: "100%",
-    },
   })
 })
 
@@ -146,7 +136,6 @@ const CadenciaDetail: React.FC = () => {
               </div>
             </div>
             <div>
-              <p className={classes.subtitleTextLight}>*This is concept work that is not affiliated with the official product</p>
               <p className={classes.subHeading}>Summary</p>
               <p className={classes.bodyText}>
                 Protocol Labs hosted a hackathon in summer 2020 for their Filecoin network. I teamed up with a developer and over one month we built out a proof-of-concept analytics tool for blockchains.
@@ -177,6 +166,9 @@ const CadenciaDetail: React.FC = () => {
                 You can take a look at the project in our demo video below.
               </p>
             </div>
+
+            <iframe title="Cadencia Video" width="100%" height="500" src="https://www.youtube.com/embed/7sX5T9b937o" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+
           </Grid>
           <div className={classes.linkWrapper}>
             <Link onClick={() => redirect('/kemistry')}>
