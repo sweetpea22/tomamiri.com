@@ -146,7 +146,7 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
   })
 })
 
-const MetaDetail: React.FC = () => {
+const CriterionDetail: React.FC = () => {
   const classes = useStyles();
   const { redirect } = useHistory();
   return (
@@ -218,4 +218,4 @@ const MetaDetail: React.FC = () => {
   )
 }
 
-export default MetaDetail
+export default CriterionDetail
