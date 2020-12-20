@@ -129,7 +129,7 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
   })
 })
 
-const CriterionDetail: React.FC = () => {
+const CadenciaDetail: React.FC = () => {
   const classes = useStyles();
   const { redirect } = useHistory();
   return (
@@ -138,57 +138,45 @@ const CriterionDetail: React.FC = () => {
         <div className={classes.wrapper}>
           <Grid container className={classes.contentContainer}>
             <div>
-              <h1 className={classes.title}>Criterion Collections</h1>
+              <h1 className={classes.title}>Cadencia</h1>
               <br></br>
-              <p className={classes.subtitleText}>Improving the streaming channel’s navigation design</p>
+              <p className={classes.subtitleText}>A data project for Filecoin’s hackathon</p>
               <div className={classes.imgContainer}>
-                <img src="/graphics/landing/criterion.png" alt="criterion mockup designed by tom amiri" />
+                <img src="/graphics/landing/hackfs.png" alt="hackfs logo from ethglobal" />
               </div>
             </div>
             <div>
               <p className={classes.subtitleTextLight}>*This is concept work that is not affiliated with the official product</p>
               <p className={classes.subHeading}>Summary</p>
               <p className={classes.bodyText}>
-                The Criterion Channel has some of the best content for streaming but navigating its UI is frustrating. So I saw an opportunity to optimize content discovery and highlight the channel’s amazing curation with a reimagined UI. Ideally, a change like this would be A/B tested against the existing interface while comparing the size of user’s watchlists.
+                Protocol Labs hosted a hackathon in summer 2020 for their Filecoin network. I teamed up with a developer and over one month we built out a proof-of-concept analytics tool for blockchains.
               </p>
             </div>
             <div>
               <p className={classes.subHeading}>Context</p>
               <p className={classes.bodyText}>
-                Criterion has been preserving important films from around the world since 1984. When I found out they were releasing a streaming service, I quickly subscribed and got access to an amazing selection of films. Yet, there was a lot of friction when it came to discovering new content.
+                My teammate and I brainstormed all kinds of ideas that would leverage decentralized storage before choosing our analytics project. Permission-less blockchains are public and produce a lot of information about their networks. We thought it would be cool if users could instantly query, visualize and share analyses of this data in a user friendly way.
               </p>
             </div>
             <div>
               <p className={classes.subHeading}>Challenges</p>
               <p className={classes.bodyText}>
-                The existing browse page offers identical rows of collections which makes it hard to know where to start searching. Themed collections are indistinguishable from more general categories like “continue watching” and “my list”. It’s hard to get a quick sense of the depth of content––there’s the option to “view all” but this takes you to another page. Instead of signalling to me different kinds of content, the rows register as noise.
+                There’s a plethora of open APIs and datasets but it’s hard to access them since they aren’t standardized or easy to navigate if you’re a nontechnical user. Even a single query would take a lot of time to process.
               </p>
-            </div>
-            <div className={classes.mockupContainer}>
-              <img src="/graphics/criterion/old-ui.png" className={classes.mockup} alt="" />
             </div>
             <div>
               <p className={classes.subHeading}>The Design Process</p>
               <p className={classes.bodyText}>
-                I studied the Channel and started to comb through its existing pages. I was surprised to see all kinds of collections in the home screen that I hadn’t paid much attention to before. A few minutes in, my watchlist grew exponentially. The Criterion Channel is different from a service like Netflix. The focus is quality over quantity and this is organized through its collections.
-              </p>
-              <p className={classes.bodyText}>
-                My immediate aim in the redesign was to condense the layout of the collections. I wanted to balance compactness with discoverability. Another constraint I had to keep in mind was that the design had to make sense across devices so that users were getting a consistent experience.
-              </p>
-              <p className={classes.bodyText}>
-                I experimented with grids, drop-downs, and different kinds of tile components. These were all unsatisfactory. Finally I realized cards would combine a lot of the goals. They would have eye-catching pictures, compact the layout, and work well in a responsive environment.
-              </p>
-            </div>
-            <div className={classes.mockupContainer}>
-              <img src="/graphics/criterion/mock1.gif" className={classes.mockup} alt="" />
-            </div>
-            <div className={classes.mockupContainer}>
-              <img src="/graphics/criterion/mock2.png" className={classes.mockup} alt="" />
-            </div>
-            <div className={classes.mockupContainer}>
-              <img src="/graphics/criterion/mock3.png" className={classes.mockup} alt="" />
-            </div>
+                Given the tight timeline, I had to understand some of the needs of the space, who might need something like this and scope out comparable services. I did a competitive analysis of other blockchain analytics companies and their target audiences. We decided we wanted to focus on researchers in the DeFi space. Leveraging open data about DeFi projects from The Graph, we aggregated datasets. This way users could perform simple queries and then have the results visualized in different ways. These graphs would then be shareable for others to examine.
 
+              </p>
+              <p className={classes.bodyText}>
+                I also designed a dashboard that would monitor and evaluate the Filecoin network’s performance, to help users make decisions about where they wanted their data stored.
+              </p>
+              <p className={classes.bodyText}>
+                You can take a look at the project in our demo video below.
+              </p>
+            </div>
           </Grid>
           <div className={classes.linkWrapper}>
             <Link onClick={() => redirect('/kemistry')}>
@@ -201,4 +189,4 @@ const CriterionDetail: React.FC = () => {
   )
 }
 
-export default CriterionDetail
+export default CadenciaDetail
