@@ -14,6 +14,9 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
+      [breakpoints.down('md')]: {
+        margin: "0 5%",
+      },
       [breakpoints.up('lg')]: {
         margin: "0 20% 0 10%",
       },
@@ -35,6 +38,11 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
       [breakpoints.up('md')]: {
         minHeight: "85vh",
       },
+      [breakpoints.down('md')]: {
+        marginTop: "10vh",
+        flexDirection: "column-reverse",
+        alignItems: "flex-start",
+      },
       "& > img": {
         width: "auto",
         height: 411,
@@ -50,6 +58,9 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
       [breakpoints.up('lg')]: {
         marginRight: "3rem",
       },
+      [breakpoints.down('md')]: {
+        marginTop: constants.generalUnit * 4,
+      },
       "& > a": {
         textDecoration: "none",
       },
@@ -61,7 +72,7 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
       fontWeight: "lighter",
       marginBottom: constants.generalUnit * 4,
       [breakpoints.down('md')]: {
-        maxWidth: "45%",
+        maxWidth: "100%",
       },
       [breakpoints.up('xl')]: {
         maxWidth: 600,

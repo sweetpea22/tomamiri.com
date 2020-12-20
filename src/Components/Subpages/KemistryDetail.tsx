@@ -202,7 +202,7 @@ const KemistryDetail: React.FC = () => {
             </div>
           </Grid>
           <div className={classes.linkWrapper}>
-            <Link onClick={() => redirect('/criterion')}>
+            <Link onClick={() => redirect('/criterion-redesign')}>
               <p className={classes.link}>Check out next project &gt;</p>
             </Link>
           </div>

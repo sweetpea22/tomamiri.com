@@ -21,6 +21,9 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
         left: "50%",
         transform: "translate(-50%)",
       },
+      [breakpoints.down('md')]: {
+        margin: 0,
+      },
     },
     titleWrapper: {
       marginBottom: "5rem",
@@ -32,9 +35,21 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       [breakpoints.up('lg')]: {
         padding: "5% 15% 0 15%",
       },
+
     },
     imgContainer: {
       position: "relative",
+      [breakpoints.down('lg')]: {
+        width: "100%",
+      }
+    },
+    imgWrapper: {
+      width: "100%",
+    },
+    img: {
+      [breakpoints.down('md')]: {
+        width: "100%",
+      }
     },
     bodyText: {
       fontSize: "28px",
@@ -53,6 +68,9 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       [breakpoints.down('lg')]: {
         right: 0,
       },
+      [breakpoints.down('md')]: {
+        width: "80%",
+      }
     },
   })
 })
@@ -65,8 +83,8 @@ const About: React.FC = () => {
         <div className={classes.wrapper}>
           <Grid container className={classes.contentContainer}>
             <Grid container className={classes.imgContainer}>
-              <Grid item xs={12} md={5} lg={7}  >
-                <img src="/graphics/landing/hand.png" alt="Hand bursting through water, pushing a blackbox out into a solid wave" />
+              <Grid item xs={10} md={5} lg={7}>
+                <img className={classes.img} src="/graphics/landing/hand.png" alt="Hand bursting through water, pushing a blackbox out into a solid wave" />
               </Grid>
               <Grid item >
                 <img className={classes.workLine} src={lines} alt="vertical line pointing to Thomas Amiri projects section" />

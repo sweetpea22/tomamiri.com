@@ -10,7 +10,7 @@ const AboutPage: React.FC = () => {
     <>
       <NavBar />
       <AboutMe />
-      <Contact />
+      {/* <Contact /> */}
       <Footer />
     </>
   )

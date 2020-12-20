@@ -13,22 +13,28 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       paddingTop: "10vh",
       margin: "0% 10% 0 10%",
       flexDirection: "column",
-      // justifyContent: "center",
-      // alignItems: "center",
-      [breakpoints.up('lg')]: {
-        margin: "0 10% 0 10%",
+      [breakpoints.up('xl')]: {
+        justifyContent: "center",
+        alignItems: "center",
       },
     },
     contentContainer: {
       position: "relative",
       display: "flex",
       flexDirection: "column",
-      // alignItems: "center",
-      // justifyContent: "center",
       paddingBottom: "5rem",
       [breakpoints.up('md')]: {
         minHeight: "85vh",
-      }
+      },
+      [breakpoints.up('lg')]: {
+        justifyContent: "center",
+        alignItems: "center",
+      },
+      "& > div": {
+        [breakpoints.down('lg')]: {
+          width: "100%",
+        }
+      },
     },
     titleWrapper: {
       display: "flex",
@@ -70,9 +76,13 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       left: "50%",
       transform: "translate(-50%)",
       width: "20rem",
+      [breakpoints.down('lg')]: {
+        left: "auto",
+        transform: "translate(0)",
+      },
     },
     firstMockupImg: {
-      [breakpoints.up(1500)]: {
+      [breakpoints.up('lg')]: {
         display: "block",
       },
       display: "none",
@@ -90,16 +100,16 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       },
       [breakpoints.up('xl')]: {
         maxWidth: "730px",
-      }
+      },
     },
     linkWrapper: {
+      display: "flex",
+      justifyContent: "flex-end",
       [breakpoints.up('lg')]: {
-        marginTop: "10vh",
-        display: "flex",
-        justifyContent: "flex-end",
+        marginTop: "5vh",
       },
       position: "relative",
-      marginBottom: "5rem",
+      marginBottom: "3rem",
       "& > a": {
         textDecoration: "none",
       }
@@ -115,15 +125,33 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       "&:active": {
         color: palette.primary.light,
       },
+      [breakpoints.down('md')]: {
+        fontSize: "16px",
+        lineHeight: "24px",
+        fontWeight: "bolder",
+      }
     },
     mockupContainer: {
       display: "flex",
       maxWidth: "100vw",
       margin: "4rem 0",
+      [breakpoints.down('lg')]: {
+        width: "100%",
+        maxWidth: "100%",
+      }
 
     },
     mockup: {
       maxWidth: "30%",
+    },
+    wireframeImg: {
+      [breakpoints.down('lg')]: {
+        width: "100%",
+      },
+    },
+    finalConceptWrapper: {
+      display: "flex",
+      flexDirection: "column",
     },
     captionContainer: {
       display: "flex",
@@ -131,11 +159,15 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       "& > p": {
         margin: "0 3rem 2rem 1rem",
         maxWidth: "300px",
+        [breakpoints.down('md')]: {
+          margin: "0 0 .5rem 1rem"
+        },
         [breakpoints.down('sm')]: {
-          marginLeft: "1rem",
           fontSize: "16px",
           lineHeight: "24px",
-          maxWidth: "40%",
+          maxWidth: "100%",
+          margin: "1vh 0",
+          paddingLeft: "2vw",
         }
       },
       "& > div": {
@@ -144,9 +176,11 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
         marginLeft: "1rem",
         background: palette.common.black.main,
         marginBottom: constants.generalUnit * 4,
+        [breakpoints.down('md')]: {
+          marginBottom: constants.generalUnit,
+        },
         [breakpoints.down('sm')]: {
-          marginLeft: "1rem",
-          marginBottom: constants.generalUnit * 2,
+          display: "none",
         }
       },
     },
@@ -154,10 +188,21 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       display: "flex",
       maxWidth: "100vw",
       margin: "4rem 0",
+      [breakpoints.down('md')]: {
+        maxWidth: "100%",
+        justifyContent: "center",
+        margin: "1rem 0",
+      },
+      [breakpoints.down('sm')]: {
+        maxWidth: "100%",
+        margin: "1rem 0",
+      },
       "& > img": {
+        [breakpoints.down('md')]: {
+          maxWidth: "225px",
+        },
         [breakpoints.down('sm')]: {
-          maxWidth: "55%",
-          height: "500px",
+          flexDirection: "column",
         }
       },
     },
@@ -172,7 +217,6 @@ const MetaDetail: React.FC = () => {
       <Section>
         <div className={classes.wrapper}>
           <Grid container className={classes.contentContainer}>
-
             <div>
               <h1 className={classes.title}>Meta-alert</h1>
               <br></br>
@@ -230,7 +274,7 @@ const MetaDetail: React.FC = () => {
               </p>
             </div>
             <div className={classes.mockupContainer}>
-              <img src="/graphics/meta-alert/wireframes.png" alt="" />
+              <img className={classes.wireframeImg} src="/graphics/meta-alert/wireframes.png" alt="" />
             </div>
             <div>
               <p className={classes.subHeading}>Final Concept</p>
@@ -238,41 +282,48 @@ const MetaDetail: React.FC = () => {
                 I asked a friend who was also a Metamask user to test my prototype. From this interview I learned that how I categorized the tabs was confusing and that some of the new elements were unintuitive. So I revisited my wireframes and focused on keep the existing UI more intact while creating a better sense of separation between functions.
               </p>
             </div>
-            <div className={classes.finalConceptContainer}>
-              <img src="/graphics/meta-alert/final1.png" alt="Prototype of Metamask notifications by Thomas Amiri" />
-              <div className={classes.captionContainer}>
-                <p className={classes.subtitleTextLight}>
-                  Flip between your funds and your plugins
-              </p>
-                <div></div>
-                <p className={classes.subtitleTextLight}>
-                  Know when your wallet processes a transaction
-              </p>
-                <div></div>
+            {/* final concept  */}
+            <div className={classes.finalConceptWrapper}>
+              <div className={classes.finalConceptContainer}>
+                <img src="/graphics/meta-alert/final1.png" alt="Prototype of Metamask notifications by Thomas Amiri" />
+                <div className={classes.captionContainer}>
+                  <p className={classes.subtitleTextLight}>
+                    Flip between your funds and your plugins
+                  </p>
+                  <div></div>
+                  <p className={classes.subtitleTextLight}>
+                    Know when your wallet processes a transaction
+                  </p>
+                  <div></div>
+                </div>
               </div>
-              <img src="/graphics/meta-alert/final2.png" alt="Prototype of Metamask notifications by Thomas Amiri" />
-              <div className={classes.captionContainer}>
-                <p className={classes.subtitleTextLight}>
-                  Be notified of your other persona’s activity
-              </p>
-                <div></div>
+              <div className={classes.finalConceptContainer}>
+                <img src="/graphics/meta-alert/final2.png" alt="Prototype of Metamask notifications by Thomas Amiri" />
+                <div className={classes.captionContainer}>
+                  <p className={classes.subtitleTextLight}>
+                    Be notified of your other persona’s activity
+                  </p>
+                  <div></div>
+                </div>
               </div>
-            </div>
-            <div className={classes.finalConceptContainer}>
-              <img src="/graphics/meta-alert/final3.png" alt="Prototype of Metamask notifications by Thomas Amiri" />
-              <div className={classes.captionContainer}>
-                <p className={classes.subtitleTextLight}>
-                  Conveniently view dapp
-                  communications
-              </p>
-                <div></div>
+              <div className={classes.finalConceptContainer}>
+                <img src="/graphics/meta-alert/final3.png" alt="Prototype of Metamask notifications by Thomas Amiri" />
+                <div className={classes.captionContainer}>
+                  <p className={classes.subtitleTextLight}>
+                    Conveniently view dapp
+                    communications
+                  </p>
+                  <div></div>
+                </div>
               </div>
-              <img src="/graphics/meta-alert/final4.png" alt="Prototype of Metamask notifications by Thomas Amiri" />
-              <div className={classes.captionContainer}>
-                <p className={classes.subtitleTextLight}>
-                  Control what dapps connect to your wallet and manage their permissions
-              </p>
-                <div></div>
+              <div className={classes.finalConceptContainer}>
+                <img src="/graphics/meta-alert/final4.png" alt="Prototype of Metamask notifications by Thomas Amiri" />
+                <div className={classes.captionContainer}>
+                  <p className={classes.subtitleTextLight}>
+                    Control what dapps connect to your wallet and manage their permissions
+                  </p>
+                  <div></div>
+                </div>
               </div>
             </div>
           </Grid>

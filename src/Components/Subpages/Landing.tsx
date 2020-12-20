@@ -39,10 +39,15 @@ const useMyStyles = () => {
         [breakpoints.down('md')]: {
           fontSize: "30px",
           lineHeight: "40px",
+          textAlign: "center",
         },
       },
       contentContainer: {
         position: "relative",
+        [breakpoints.down('md')]: {
+          padding: "10% 0 0 0",
+          width: "100%",
+        },
         [breakpoints.up('lg')]: {
           padding: "5% 15% 0 15%",
         },
@@ -62,6 +67,12 @@ const useMyStyles = () => {
         "& > span": {
           fontWeight: 400,
         },
+        [breakpoints.down('md')]: {
+          fontSize: "36px",
+          lineHeight: "45px",
+          width: "100%",
+          textAlign: "center",
+        }
       },
 
       "@keyframes gradientFill": {
