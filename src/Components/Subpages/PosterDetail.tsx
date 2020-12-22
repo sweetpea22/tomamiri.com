@@ -80,7 +80,6 @@ const PosterDetail: React.FC = () => {
               <img src="/graphics/posters/aphorism.png" />
               <img src="/graphics/posters/design-week1.png" />
               <img src="/graphics/posters/design-week2.png" />
-              <img src="/graphics/posters/music-poster.png" />
               <img src="/graphics/posters/event-poster2.png" />
               <img src="/graphics/posters/even-poster3.png" />
               <img src="/graphics/posters/event-poster.png" />
