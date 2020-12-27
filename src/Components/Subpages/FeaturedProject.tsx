@@ -1,7 +1,8 @@
 import React from 'react'
 import Section from "../Modules/Section";
 import { createStyles, ITheme, makeStyles } from "@chainsafe/common-theme";
-import { Grid } from "@chainsafe/common-components";
+import { Grid, useHistory, Link } from "@chainsafe/common-components";
+import pageButton from "./svg/pagebutton.svg";
 
 
 
@@ -12,10 +13,10 @@ const useMyStyles = () => {
       wrapper: {
         maxWidth: "2560px",
         display: "flex",
-        background: "#121212",
+        background: "#ddd",
         minHeight: "70vh",
         margin: "0 4%",
-        padding: "10vh 0 15vh 0",
+        paddingTop: "15vh",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
@@ -50,27 +51,23 @@ const useMyStyles = () => {
           textAlign: "left",
         }
       },
-      headshotWrapper: {
+      imgWrapper: {
         marginTop: "4rem",
       },
       bodyText: {
-        fontSize: "24px",
+        fontSize: "20px",
         fontWeight: 400,
         fontFamily: "IBM Plex Mono",
-        lineHeight: "32px",
+        lineHeight: "30px",
         width: "80%",
-        color: palette.common.white.main,
-        [breakpoints.down('md')]: {
-          fontSize: "30px",
-          lineHeight: "40px",
-        },
+        color: palette.common.black.main,
       },
       jumboText: {
         fontSize: "120px",
         lineHeight: "125px",
         fontWeight: 600,
         fontFamily: "Inter",
-        color: palette.common.white.main,
+        color: palette.common.black.main,
         [breakpoints.down('md')]: {
           fontSize: "36px",
           lineHeight: "45px",
@@ -78,39 +75,53 @@ const useMyStyles = () => {
         }
       },
       transitionGradient: {
-        position: "absolute",
-        bottom: -300,
-        zIndex: zIndex?.layer4,
+        marginTop: "10vh",
+      },
+      projectLink: {
+        transition: "all 0.3s ease-out",
+        "&:hover": {
+          transform: "translateY(-4px)",
+        },
+        "&:active": {
+          color: palette.common.black.main,
+        },
+        "& > img": {
+          maxHeight: "30px",
+          width: "30px",
+          height: "30px",
+          color: palette.common.black.main,
+        }
       }
     })
   })
   return useStyles();
 }
 
-const Landing: React.FC = () => {
+const FeaturedProject: React.FC = () => {
   const classes = useMyStyles();
+  const { redirect } = useHistory();
   return (
     <>
       <Section>
         <div className={classes.wrapper}>
           <Grid container xs={12} className={classes.contentContainer}>
             <div className={classes.titleWrapper}>
-              <h1 className={classes.jumboText}>Web3</h1>
-              <h1 className={classes.jumboText}>Ethereum</h1>
-              <h1 className={classes.jumboText}>Product Design</h1>
               <p className={classes.bodyText}>
-                Hey, I’m Tom. I’m a Toronto-based UI designer with research, UX, communication, and strategy skills. I’m looking to join a fast-paced team in the blockchain ecosystem disrupting some corner of the universe.
+                Notifications for Metamask (Concept)
               </p>
+              <h1 className={classes.jumboText}>Meta-alert <span>                    <Link onClick={() => redirect("/meta-alert")} className={classes.projectLink}>
+                <img src={pageButton} alt="Click here to access more detail about meta-alert" />
+              </Link></span></h1>
+
             </div>
-            <div className={classes.headshotWrapper}>
-              <img src="/graphics/landing/headshot.png" alt="Thomas Amiri" />
+            <div className={classes.imgWrapper}>
+              <img src="/graphics/landing/splash.png" alt="3d metal splash" />
             </div>
           </Grid>
         </div>
-        <img className={classes.transitionGradient} src="/graphics/landing/gradient1.png" alt="blue to purple gradient" />
       </Section>
     </>
   )
 }
 
-export default Landing
+export default FeaturedProject
