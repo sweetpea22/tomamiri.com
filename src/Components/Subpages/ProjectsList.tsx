@@ -124,10 +124,9 @@ const ProjectsList: React.FC = () => {
             {projects.map((p, index) => (
               <div className={classes.projectWrapper} key={index}>
                 <Grid container className={classes.projectContentWrapper}>
-                  <img src={p.imgUrl} className={classes.projectImg} alt={`${p.name} graphic by Thomas Amiri`} />
                   <div className={classes.projectTextWrapper}>
-                    <h1>{p.name}</h1>
                     <p>{p.desc}</p>
+                    <h1>{p.name}</h1>
                     <Link onClick={() => redirect(p.pageUrl)} className={classes.projectLink}>
                       <img src={pageButton} alt={`Click to access page about ${p.name}`} />
                     </Link>

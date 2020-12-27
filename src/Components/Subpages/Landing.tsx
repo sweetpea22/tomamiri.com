@@ -29,7 +29,7 @@ const useMyStyles = () => {
       titleWrapper: {
         maxWidth: "100%",
       },
-      titleText: {
+      bodyText: {
         fontSize: "36px",
         fontWeight: 400,
         fontFamily: 'IBM Plex Sans Condensed',
@@ -59,11 +59,7 @@ const useMyStyles = () => {
         fontSize: "64px",
         lineHeight: "80px",
         fontWeight: "bold",
-        background: "linear-gradient(45deg,  #01FF85,#038CFD, #DC2430, #7B4397, #F0CB35)",
-        WebkitBackgroundClip: "text",
-        WebkitTextFillColor: "transparent",
-        backgroundSize: "200% 300%",
-        animation: `$gradientFill 13s linear infinite`,
+        color: palette.common.white.main,
         "& > span": {
           fontWeight: 400,
         },
@@ -72,20 +68,6 @@ const useMyStyles = () => {
           lineHeight: "45px",
           width: "100%",
           textAlign: "center",
-        }
-      },
-
-      "@keyframes gradientFill": {
-        "0%": {
-          backgroundPosition: "0% 60%",
-        },
-        "50%": {
-          backgroundPosition: "100% 0%",
-
-        },
-        "100%": {
-          backgroundPosition: "0% 60%",
-
         }
       },
 
@@ -102,10 +84,12 @@ const Landing: React.FC = () => {
         <div className={classes.wrapper}>
           <Grid container xs={12} className={classes.contentContainer}>
             <div className={classes.titleWrapper}>
-              <p className={classes.titleText}>
-                Hey, I’m Tom. I’m a self-taught designer with research, UX, communication, and strategy skills. I’m looking to join a fast-paced team disrupting some corner of the universe. I’m passionate about:
+              <h1 className={classes.jumboText}>Web3</h1>
+              <h1 className={classes.jumboText}>Ethereum</h1>
+              <h1 className={classes.jumboText}>Product Design</h1>
+              <p className={classes.bodyText}>
+                Hey, I’m Tom. I’m a Toronto-based UI designer with research, UX, communication, and strategy skills. I’m looking to join a fast-paced team in the blockchain ecosystem disrupting some corner of the universe.
               </p>
-              <h1 className={classes.jumboText}>Web3<span>/</span>Ethereum<span>/</span>Product Design</h1>
             </div>
           </Grid>
         </div>
