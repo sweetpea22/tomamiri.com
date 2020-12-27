@@ -2,7 +2,7 @@ import React from 'react'
 import Section from "../Modules/Section";
 import { createStyles, ITheme, makeStyles } from "@chainsafe/common-theme";
 import { Grid } from "@chainsafe/common-components";
-import dribIcon from "./svg/dribbble.svg";
+import dribIcon from "./svg/drib.svg";
 import twitterIcon from "./svg/twitter.svg";
 
 const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
@@ -101,7 +101,7 @@ const Contact: React.FC = () => {
       <Section>
         <div className={classes.wrapper}>
           <Grid container className={classes.contentContainer}>
-            <Grid item xs={6} lg={5}>
+            <Grid item xs={12} lg={5}>
               <img className={classes.img} src="/graphics/landing/phone.png" alt="3d glass phone by thomas amiri" />
             </Grid>
             <div className={classes.textWrapper}>

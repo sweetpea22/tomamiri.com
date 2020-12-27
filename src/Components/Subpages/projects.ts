@@ -2,13 +2,11 @@ const projects = [
   {
     name: "Kemistry",
     desc: "COLLABORATIVE MUSIC CREATION",
-    imgUrl: "/graphics/landing/project1",
     pageUrl: "/kemistry",
   },
   {
     name: "Criterion Collections",
     desc: "IMPROVING USABILITY THRU NAVIGATION DESIGN",
-    imgUrl: "graphics/landing/project2",
     pageUrl: "/criterion-redesign",
 
   },
@@ -16,9 +14,7 @@ const projects = [
     name: "Cadencia",
     desc: "ANALYTICS DASHBOARD FOR FILECOIN",
     imgUrl: "",
-
     pageUrl: "/cadencia",
-
   },
   {
     name: "Posters",
