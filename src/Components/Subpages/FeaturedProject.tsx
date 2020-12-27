@@ -61,12 +61,16 @@ const useMyStyles = () => {
         lineHeight: "30px",
         width: "80%",
         color: palette.common.black.main,
+        textTransform: "uppercase",
       },
       jumboText: {
         fontSize: "120px",
         lineHeight: "125px",
         fontWeight: 600,
         fontFamily: "Inter",
+        "& > span": {
+          marginLeft: constants.generalUnit * 5,
+        },
         color: palette.common.black.main,
         [breakpoints.down('md')]: {
           fontSize: "36px",
@@ -109,9 +113,13 @@ const FeaturedProject: React.FC = () => {
               <p className={classes.bodyText}>
                 Notifications for Metamask (Concept)
               </p>
-              <h1 className={classes.jumboText}>Meta-alert <span>                    <Link onClick={() => redirect("/meta-alert")} className={classes.projectLink}>
-                <img src={pageButton} alt="Click here to access more detail about meta-alert" />
-              </Link></span></h1>
+              <h1 className={classes.jumboText}>Meta-alert
+                <span>
+                  <Link onClick={() => redirect("/meta-alert")}>
+                    <img className={classes.projectLink} src={pageButton} alt="Click here to access more detail about meta-alert" />
+                  </Link>
+                </span>
+              </h1>
 
             </div>
             <div className={classes.imgWrapper}>
