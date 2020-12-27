@@ -2,7 +2,6 @@ import React from 'react'
 import Section from "../Modules/Section";
 import { createStyles, ITheme, makeStyles } from "@chainsafe/common-theme";
 import { Grid, Link, useHistory } from "@chainsafe/common-components";
-import fox from "./svg/fox.svg";
 
 const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: ITheme) => {
 
@@ -223,7 +222,6 @@ const MetaDetail: React.FC = () => {
               <p className={classes.subtitleText}>Notifications for the Metamask wallet</p>
               <div className={classes.imgContainer}>
                 <img className={classes.firstMockupImg} src="/graphics/meta-alert/final1.png" alt="meta-alert prototype" />
-                <img src={fox} className={classes.foxImg} alt="meta-alert logo, notifications for metamask by thomas amiri" />
               </div>
             </div>
             <div>

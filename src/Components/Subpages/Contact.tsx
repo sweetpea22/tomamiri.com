@@ -11,7 +11,7 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
       maxWidth: "2560px",
       display: "flex",
       paddingTop: "10vh",
-      margin: "0% 15% 0 15%",
+      margin: "0% 5%",
       justifyContent: "center",
       alignItems: "center",
       [breakpoints.down('md')]: {
@@ -24,7 +24,7 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
       alignItems: "center",
       justifyContent: "flex-start",
       [breakpoints.up('lg')]: {
-        width: "80%",
+        width: "100%",
       },
       [breakpoints.up('xl')]: {
         margin: 0,
@@ -41,32 +41,23 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
         height: "auto",
       },
     },
-    bodyText: {
-      fontSize: "28px",
-      lineHeight: "38px",
-      maxWidth: "630px",
-      fontWeight: "lighter",
-      [breakpoints.up('lg')]: {
-        marginLeft: "5rem",
-      },
-    },
     textWrapper: {
       display: "flex",
       flexDirection: "column",
       alignItems: "flex-start",
       "& > h1": {
-        fontWeight: 400,
-        fontSize: "40px",
-        color: palette.common.black.main,
+        fontWeight: 700,
+        fontSize: "70px",
+        color: palette.common.white.main,
         [breakpoints.down('md')]: {
-          fontSize: "20px",
+          fontSize: "40px",
           fontWeight: "bolder",
         }
       },
       "& > p": {
         fontWeight: "normal",
-        color: palette.common.black.main,
-        marginBottom: "2rem",
+        fontFamily: "IBM Plex Mono",
+        color: palette.common.white.main,
         fontSize: "24px",
         lineHeight: "32px",
         maxWidth: "320px",
@@ -101,12 +92,12 @@ const Contact: React.FC = () => {
       <Section>
         <div className={classes.wrapper}>
           <Grid container className={classes.contentContainer}>
-            <Grid item xs={12} lg={5}>
+            <Grid item xs={4} lg={5}>
               <img className={classes.img} src="/graphics/landing/phone.png" alt="3d glass phone by thomas amiri" />
             </Grid>
             <div className={classes.textWrapper}>
-              <h1>CONTACT</h1>
-              <p>tomoamiri(at)gmail.com</p>
+              <p>Drop me a line</p>
+              <h1>tomoamiri(at)gmail.com</h1>
               <div className={classes.iconWrapper}>
                 <a href="https://twitter.com/tomoamiri" target="_blank" rel="noopener noreferrer">
                   <img className={classes.icon} src={twitterIcon} alt="Twitter link" />
