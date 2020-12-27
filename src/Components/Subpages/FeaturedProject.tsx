@@ -14,8 +14,7 @@ const useMyStyles = () => {
         maxWidth: "2560px",
         display: "flex",
         background: "#ddd",
-        minHeight: "70vh",
-        margin: "0 4%",
+        margin: "0",
         paddingTop: "15vh",
         flexDirection: "column",
         justifyContent: "center",
@@ -68,6 +67,8 @@ const useMyStyles = () => {
         lineHeight: "125px",
         fontWeight: 600,
         fontFamily: "Inter",
+        cursor: "pointer",
+        transition: "all 0.5s ease-out",
         "& > span": {
           marginLeft: constants.generalUnit * 5,
         },
@@ -76,7 +77,10 @@ const useMyStyles = () => {
           fontSize: "36px",
           lineHeight: "45px",
           width: "100%",
-        }
+        },
+        "&:hover": {
+          color: "#F5861C",
+        },
       },
       transitionGradient: {
         marginTop: "10vh",
@@ -113,7 +117,8 @@ const FeaturedProject: React.FC = () => {
               <p className={classes.bodyText}>
                 Notifications for Metamask (Concept)
               </p>
-              <h1 className={classes.jumboText}>Meta-alert
+              <h1 className={classes.jumboText} onClick={() => redirect("/meta-alert")}>
+                Meta-alert
                 <span>
                   <Link onClick={() => redirect("/meta-alert")}>
                     <img className={classes.projectLink} src={pageButton} alt="Click here to access more detail about meta-alert" />

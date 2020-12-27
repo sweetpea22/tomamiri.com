@@ -2,7 +2,7 @@ import React from 'react'
 import Section from "../Modules/Section";
 import { createStyles, ITheme, makeStyles } from "@chainsafe/common-theme";
 import { Grid, Link, useHistory, } from "@chainsafe/common-components";
-import pageButton from "./svg/pagebutton.svg";
+import smallPageButton from "./svg/smallPageButton.svg";
 import projects from "./projects";
 
 const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: ITheme) => {
@@ -29,6 +29,7 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
+      background: `url("/graphics/landing/weird.png")`,
     },
     projectWrapper: {
       height: "auto",
@@ -58,15 +59,30 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
         fontSize: "20px",
         lineHeight: "30px",
         fontFamily: "IBM Plex Mono",
+        color: palette.common.white.main,
+
       },
     },
     projectTitle: {
       fontSize: "100px",
       fontWeight: "bold",
-      color: palette.common.black.main,
+      cursor: "pointer",
+      color: palette.common.white.main,
+      transition: "all 0.5s ease-out",
       "& > span": {
         marginLeft: constants.generalUnit * 4,
         width: 20, height: 20,
+        [breakpoints.down('md')]: {
+          display: "none",
+        }
+      },
+      "&:hover": {
+        color: palette.common.black.main,
+      },
+      [breakpoints.down('md')]: {
+        fontSize: "36px",
+        lineHeight: "45px",
+        width: "100%",
       }
 
     },
@@ -95,11 +111,11 @@ const ProjectsList: React.FC = () => {
                 <Grid container className={classes.projectContentWrapper}>
                   <div className={classes.projectTextWrapper}>
                     <p>{p.desc}</p>
-                    <h1 className={classes.projectTitle}>
+                    <h1 className={classes.projectTitle} onClick={() => redirect(p.pageUrl)}>
                       {p.name}
                       <span>
                         <Link onClick={() => redirect(p.pageUrl)} >
-                          <img src={pageButton} className={classes.projectLink} alt={`Click to access page about ${p.name}`} />
+                          <img src={smallPageButton} className={classes.projectLink} alt={`Click to access page about ${p.name}`} />
                         </Link>
                       </span>
                     </h1>

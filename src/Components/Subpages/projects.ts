@@ -1,20 +1,20 @@
 const projects = [
   {
     name: "Kemistry",
-    desc: "Fruity Loops meets Google Docs in this concept music platform",
+    desc: "COLLABORATIVE MUSIC CREATION",
     imgUrl: "/graphics/landing/project1",
     pageUrl: "/kemistry",
   },
   {
     name: "Criterion Collections",
-    desc: "A UI exploration to make finding great films a breeze",
+    desc: "IMPROVING USABILITY THRU NAVIGATION DESIGN",
     imgUrl: "graphics/landing/project2",
     pageUrl: "/criterion-redesign",
 
   },
   {
     name: "Cadencia",
-    desc: "A blockchain analytics project for Filecoin's hackathon",
+    desc: "ANALYTICS DASHBOARD FOR FILECOIN",
     imgUrl: "",
 
     pageUrl: "/cadencia",
@@ -22,7 +22,7 @@ const projects = [
   },
   {
     name: "Posters",
-    desc: "Graphic work in no particular order",
+    desc: "POSTERS IN NO PARTICULAR ORDER",
     imgUrl: "",
 
     pageUrl: "/posters",

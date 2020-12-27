@@ -80,7 +80,7 @@ const useMyStyles = () => {
       transitionGradient: {
         position: "absolute",
         bottom: -300,
-        zIndex: zIndex?.layer4,
+        zIndex: zIndex?.layer3,
       }
     })
   })
