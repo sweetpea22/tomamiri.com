@@ -10,8 +10,8 @@ const theme = createTheme({
   globalStyling: {
     body: {
       overflowX: "hidden",
-      background: "#dddddd",
-      fontFamily: 'IBM Plex Sans Condensed',
+      background: "#121212",
+      fontFamily: 'Inter',
     }
   },
   themeConfig: {
@@ -35,9 +35,6 @@ const theme = createTheme({
   }
 })
 function App() {
-  // const handleClick = () => {
-  //   window[`scrollTo`]({ top: 0, behavior: `smooth` })
-  // }
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />

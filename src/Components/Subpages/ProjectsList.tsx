@@ -111,7 +111,6 @@ const ProjectsList: React.FC = () => {
           <Grid container xs={8} className={classes.contentContainer}>
             <div className={classes.projectWrapper} >
               <Grid container className={classes.projectContentWrapper}>
-                <img src={fox} className={classes.projectImg} alt="Meta-alert graphic by Thomas Amiri" />
                 <div className={classes.projectTextWrapper}>
                   <h1>Meta-alert</h1>
                   <p>Notifications for your favourite web3 gateway</p>

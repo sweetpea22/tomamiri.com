@@ -12,6 +12,7 @@ const useMyStyles = () => {
       wrapper: {
         maxWidth: "2560px",
         display: "flex",
+        background: "#121212",
         minHeight: "70vh",
         margin: "0 4%",
         paddingTop: "10vh",
@@ -30,12 +31,12 @@ const useMyStyles = () => {
         maxWidth: "100%",
       },
       bodyText: {
-        fontSize: "36px",
+        fontSize: "24px",
         fontWeight: 400,
-        fontFamily: 'IBM Plex Sans Condensed',
-        lineHeight: "47px",
-        width: "100%",
-        color: palette.primary.main,
+        fontFamily: "IBM Plex Mono",
+        lineHeight: "32px",
+        width: "50%",
+        color: palette.common.white.main,
         [breakpoints.down('md')]: {
           fontSize: "30px",
           lineHeight: "40px",
@@ -49,16 +50,17 @@ const useMyStyles = () => {
           width: "100%",
         },
         [breakpoints.up('lg')]: {
-          padding: "5% 15% 0 15%",
+          padding: "0% 5% 0 5%",
         },
         [breakpoints.up('xl')]: {
           padding: "5% 25% 0 25%",
         },
       },
       jumboText: {
-        fontSize: "64px",
-        lineHeight: "80px",
-        fontWeight: "bold",
+        fontSize: "120px",
+        lineHeight: "125px",
+        fontWeight: 600,
+        fontFamily: "Inter",
         color: palette.common.white.main,
         "& > span": {
           fontWeight: 400,
