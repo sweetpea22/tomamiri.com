@@ -27,24 +27,11 @@ const useMyStyles = () => {
           minHeight: "50vh",
         },
       },
-      titleWrapper: {
-        maxWidth: "100%",
-      },
-      bodyText: {
-        fontSize: "24px",
-        fontWeight: 400,
-        fontFamily: "IBM Plex Mono",
-        lineHeight: "32px",
-        width: "50%",
-        color: palette.common.white.main,
-        [breakpoints.down('md')]: {
-          fontSize: "30px",
-          lineHeight: "40px",
-          textAlign: "center",
-        },
-      },
       contentContainer: {
         position: "relative",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
         [breakpoints.down('md')]: {
           padding: "10% 0 0 0",
           width: "100%",
@@ -53,7 +40,29 @@ const useMyStyles = () => {
           padding: "0% 5% 0 5%",
         },
         [breakpoints.up('xl')]: {
-          padding: "5% 25% 0 25%",
+          padding: "0% 10% 0 10%",
+        },
+      },
+      titleWrapper: {
+        maxWidth: "60%",
+        [breakpoints.down('lg')]: {
+          maxWidth: "100%",
+          textAlign: "left",
+        }
+      },
+      headshotWrapper: {
+        marginTop: "4rem",
+      },
+      bodyText: {
+        fontSize: "24px",
+        fontWeight: 400,
+        fontFamily: "IBM Plex Mono",
+        lineHeight: "32px",
+        width: "80%",
+        color: palette.common.white.main,
+        [breakpoints.down('md')]: {
+          fontSize: "30px",
+          lineHeight: "40px",
         },
       },
       jumboText: {
@@ -69,7 +78,6 @@ const useMyStyles = () => {
           fontSize: "36px",
           lineHeight: "45px",
           width: "100%",
-          textAlign: "center",
         }
       },
 
@@ -92,6 +100,9 @@ const Landing: React.FC = () => {
               <p className={classes.bodyText}>
                 Hey, I’m Tom. I’m a Toronto-based UI designer with research, UX, communication, and strategy skills. I’m looking to join a fast-paced team in the blockchain ecosystem disrupting some corner of the universe.
               </p>
+            </div>
+            <div className={classes.headshotWrapper}>
+              <img src="/graphics/landing/headshot.png" alt="Thomas Amiri" />
             </div>
           </Grid>
         </div>
