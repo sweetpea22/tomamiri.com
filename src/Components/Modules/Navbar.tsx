@@ -10,10 +10,10 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       width: "100%",
       display: "flex",
       justifyContent: "flex-start",
-      height: constants.generalUnit * 9,
+      height: constants.generalUnit * 6,
       position: "fixed",
       zIndex: zIndex?.layer4,
-      background: "#fafafa",
+      background: "#121212",
       [breakpoints.down('sm')]: {
         padding: "none",
       }
@@ -34,12 +34,11 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       margin: constants.generalUnit,
     },
     brandName: {
-      color: palette.common.black.main,
+      color: palette.common.white.main,
       marginLeft: constants.generalUnit,
       textDecoration: "none",
     },
     linkWrapper: {
-      background: palette.secondary.main,
       padding: "0.6rem",
       position: "relative",
       zIndex: zIndex?.layer3,
@@ -51,7 +50,7 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       fontSize: "20px",
       cursor: "pointer",
       padding: "1rem",
-      color: palette.common.black.main,
+      color: palette.common.white.main,
       fontWeight: "lighter",
       transition: "all 0.1s ease-in",
       '&:hover': {
