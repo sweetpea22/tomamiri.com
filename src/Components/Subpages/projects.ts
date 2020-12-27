@@ -13,14 +13,11 @@ const projects = [
   {
     name: "Cadencia",
     desc: "ANALYTICS DASHBOARD FOR FILECOIN",
-    imgUrl: "",
     pageUrl: "/cadencia",
   },
   {
     name: "Posters",
     desc: "POSTERS IN NO PARTICULAR ORDER",
-    imgUrl: "",
-
     pageUrl: "/posters",
   },
 ]

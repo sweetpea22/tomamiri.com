@@ -36,7 +36,7 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       width: "100vw",
       display: "flex",
       alignItems: "center",
-      padding: "2rem",
+      padding: "2.2rem 0",
       margin: "2rem 0",
       [breakpoints.down('md')]: {
         width: "100%",
