@@ -1,7 +1,7 @@
 import React from 'react'
 import Section from "../Modules/Section";
 import { createStyles, ITheme, makeStyles } from "@chainsafe/common-theme";
-import { Grid, Link, useHistory } from "@chainsafe/common-components";
+import { Grid } from "@chainsafe/common-components";
 
 const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
 
@@ -95,7 +95,6 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
 
 const AboutMe: React.FC = () => {
   const classes = useStyles();
-  const { redirect } = useHistory();
   return (
     <>
       <Section>
@@ -111,9 +110,6 @@ const AboutMe: React.FC = () => {
               <p className={classes.bodyText}>
                 What sets me apart is my sensitivity to both business and user needs, understanding the roadmap while staying open-minded to feedback for better product market fit.
               </p>
-              <Link onClick={() => redirect('/meta-alert')}>
-                <p className={classes.link}>Check out some work &gt;</p>
-              </Link>
             </div>
             <img src="/graphics/about/portrait.jpg" alt="Thomas Amiri Product designer" />
           </Grid>

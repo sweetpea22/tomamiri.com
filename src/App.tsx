@@ -12,6 +12,9 @@ const theme = createTheme({
       overflowX: "hidden",
       background: "#121212",
       fontFamily: 'Inter',
+    },
+    a: {
+      textDecoration: "none",
     }
   },
   themeConfig: {

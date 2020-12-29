@@ -2,7 +2,7 @@ import React from "react";
 import {
   createStyles, ITheme, makeStyles
 } from "@chainsafe/common-theme";
-import { Grid, Typography, useHistory, Link } from "@chainsafe/common-components";
+import { Grid, Typography } from "@chainsafe/common-components";
 
 const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: ITheme) => {
   return createStyles({
@@ -65,21 +65,19 @@ const NavBar: React.FC = () => {
 
   const classes = useStyles();
 
-  const { redirect } = useHistory()
-
   return (
     <nav className={classes.container}>
       <Grid container xs={12}>
         <Grid item justifyContent="center" alignItems="flex-start">
           <Grid container alignItems="center">
             <Typography variant="h4">
-              <Link className={classes.brandName} onClick={() => redirect('/')}>Thomas Amiri</Link>
+              <a className={classes.brandName} href="/">Thomas Amiri</a>
             </Typography>
           </Grid>
         </Grid>
         <Grid item className={classes.linksMenu} >
           <div className={classes.linkWrapper}>
-            <Link onClick={() => redirect('/about')} className={classes.link}>About</Link>
+            <a href="/about" className={classes.link}>About</a>
           </div>
         </Grid>
       </Grid>

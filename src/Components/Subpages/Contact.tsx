@@ -49,10 +49,18 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
       },
       "& > h1": {
         fontWeight: 700,
-        fontSize: "70px",
+        fontSize: "50px",
         color: palette.common.white.main,
-        [breakpoints.down('md')]: {
+        [breakpoints.down('lg')]: {
           fontSize: "24px",
+          fontWeight: "bolder",
+        },
+        [breakpoints.down('sm')]: {
+          fontSize: "16px",
+          fontWeight: "bolder",
+        },
+        [breakpoints.up('xl')]: {
+          fontSize: "74px",
           fontWeight: "bolder",
         }
       },

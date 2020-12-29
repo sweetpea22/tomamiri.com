@@ -1,7 +1,7 @@
 import React from 'react'
 import Section from "../Modules/Section";
 import { createStyles, ITheme, makeStyles } from "@chainsafe/common-theme";
-import { Grid, Link, useHistory, } from "@chainsafe/common-components";
+import { Grid } from "@chainsafe/common-components";
 import smallPageButton from "./svg/smallPageButton.svg";
 import projects from "./projects";
 
@@ -11,7 +11,6 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
     wrapper: {
       maxWidth: "2560px",
       display: "flex",
-      margin: "0",
       background: "#ddd",
       paddingTop: "10vh",
       flexDirection: "column",
@@ -29,26 +28,34 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
-      background: `url("/graphics/landing/weird.png")`,
     },
     projectWrapper: {
       height: "auto",
       width: "100vw",
       display: "flex",
       alignItems: "center",
-      padding: "2.2rem 0",
-      margin: "2rem 0",
-      [breakpoints.down('md')]: {
-        width: "100%",
-        maxWidth: "100vw",
-        flexDirection: "column",
+      padding: "2.3rem 0",
+      "&:first-of-type": {
+        background: `url("/graphics/landing/project1.png")`,
       },
+      "&:nth-of-type(2)": {
+        background: `url("/graphics/landing/project2.png")`,
+
+      },
+      "&:nth-of-type(3)": {
+        background: `url("/graphics/landing/project3.png")`,
+
+      },
+      "&:nth-of-type(4)": {
+        background: `url("/graphics/landing/project4.png")`,
+      },
+
     },
     projectContentWrapper: {
       width: "100%",
       display: "flex",
       flexDirection: "column",
-      margin: "0 10%",
+      margin: "3% 10% 0 10%",
     },
     projectTextWrapper: {
       display: "flex",
@@ -65,26 +72,33 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
     },
     projectTitle: {
       fontSize: "100px",
-      fontWeight: "bold",
+      lineHeight: "115px",
+      fontWeight: 600,
+      fontFamily: "Inter",
       cursor: "pointer",
-      color: palette.common.white.main,
+      marginTop: constants.generalUnit,
       transition: "all 0.5s ease-out",
       "& > span": {
-        marginLeft: constants.generalUnit * 4,
-        width: 20, height: 20,
-        [breakpoints.down('md')]: {
+        marginLeft: constants.generalUnit * 5,
+        [breakpoints.down('lg')]: {
           display: "none",
-        }
+        },
       },
+      [breakpoints.down('lg')]: {
+        fontSize: "60px",
+        lineHeight: "72px",
+      },
+      [breakpoints.down('sm')]: {
+        fontSize: "45px",
+        lineHeight: "55px",
+      },
+      color: palette.common.white.main,
       "&:hover": {
         color: palette.common.black.main,
       },
-      [breakpoints.down('md')]: {
-        fontSize: "36px",
-        lineHeight: "45px",
-        width: "100%",
-      }
-
+      "&:focus": {
+        color: palette.common.black.main,
+      },
     },
     projectLink: {
       transition: "all 0.3s ease-out",
@@ -100,7 +114,6 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
 
 const ProjectsList: React.FC = () => {
   const classes = useStyles();
-  const { redirect } = useHistory();
   return (
     <>
       <Section>
@@ -111,14 +124,16 @@ const ProjectsList: React.FC = () => {
                 <Grid container className={classes.projectContentWrapper}>
                   <div className={classes.projectTextWrapper}>
                     <p>{p.desc}</p>
-                    <h1 className={classes.projectTitle} onClick={() => redirect(p.pageUrl)}>
-                      {p.name}
-                      <span>
-                        <Link onClick={() => redirect(p.pageUrl)} >
-                          <img src={smallPageButton} className={classes.projectLink} alt={`Click to access page about ${p.name} by Tom Amiri`} />
-                        </Link>
-                      </span>
-                    </h1>
+                    <a href={`/${p.pageUrl}`}>
+                      <h1 className={classes.projectTitle}>
+                        {p.name}
+                        <span>
+                          <a href={`/${p.pageUrl}`} >
+                            <img src={smallPageButton} className={classes.projectLink} alt={`Click to access page about ${p.name} by Tom Amiri`} />
+                          </a>
+                        </span>
+                      </h1>
+                    </a>
                   </div>
                 </Grid>
               </div>

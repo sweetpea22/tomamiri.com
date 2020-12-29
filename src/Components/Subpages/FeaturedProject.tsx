@@ -1,8 +1,8 @@
 import React from 'react'
 import Section from "../Modules/Section";
 import { createStyles, ITheme, makeStyles } from "@chainsafe/common-theme";
-import { Grid, useHistory, Link } from "@chainsafe/common-components";
-import pageButton from "./svg/smallPageButton.svg";
+import { Grid } from "@chainsafe/common-components";
+import pageButton from "./svg/blackpageButton.svg";
 
 
 
@@ -130,7 +130,6 @@ const useMyStyles = () => {
 
 const FeaturedProject: React.FC = () => {
   const classes = useMyStyles();
-  const { redirect } = useHistory();
   return (
     <>
       <Section>
@@ -141,13 +140,13 @@ const FeaturedProject: React.FC = () => {
               <p className={classes.bodyText}>
                 Notifications for Metamask (Concept)
               </p>
-              <a href="/meta-alert" style={{ textDecoration: "none" }}>
+              <a href="/meta-alert">
                 <h1 className={classes.jumboText}>
                   Meta-alert
                 <span>
-                    <Link onClick={() => redirect("/meta-alert")}>
+                    <a href="/meta-alert">
                       <img className={classes.projectLink} src={pageButton} alt="Click here to access more detail about meta-alert" />
-                    </Link>
+                    </a>
                   </span>
                 </h1>
               </a>
