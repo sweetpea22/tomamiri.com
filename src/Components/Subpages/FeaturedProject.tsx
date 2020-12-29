@@ -2,7 +2,7 @@ import React from 'react'
 import Section from "../Modules/Section";
 import { createStyles, ITheme, makeStyles } from "@chainsafe/common-theme";
 import { Grid, useHistory, Link } from "@chainsafe/common-components";
-import pageButton from "./svg/pagebutton.svg";
+import pageButton from "./svg/smallPageButton.svg";
 
 
 
@@ -15,7 +15,6 @@ const useMyStyles = () => {
         display: "flex",
         background: "#ddd",
         margin: "0",
-        paddingTop: "15vh",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
@@ -52,6 +51,12 @@ const useMyStyles = () => {
       },
       imgWrapper: {
         marginTop: "4rem",
+        "& > img": {
+          maxHeight: "1500px",
+          maxWidth: "750px",
+          position: "relative",
+          right: -450,
+        }
       },
       bodyText: {
         fontSize: "20px",
@@ -82,9 +87,6 @@ const useMyStyles = () => {
           color: "#F5861C",
         },
       },
-      transitionGradient: {
-        marginTop: "10vh",
-      },
       projectLink: {
         transition: "all 0.3s ease-out",
         "&:hover": {
@@ -98,6 +100,17 @@ const useMyStyles = () => {
           width: "30px",
           height: "30px",
           color: palette.common.black.main,
+        },
+      },
+      transitionGradient: {
+        position: "relative",
+        maxWidth: "100vw",
+        minHeight: "20vh",
+        zIndex: zIndex?.layer3,
+        [breakpoints.up('xl')]: {
+          left: "50%",
+          transform: "translateX(-50%)",
+          bottom: "auto",
         }
       }
     })
@@ -112,6 +125,7 @@ const FeaturedProject: React.FC = () => {
     <>
       <Section>
         <div className={classes.wrapper}>
+          <img className={classes.transitionGradient} src="/graphics/landing/gradient1.png" alt="blue to purple gradient" />
           <Grid container xs={12} className={classes.contentContainer}>
             <div className={classes.titleWrapper}>
               <p className={classes.bodyText}>
@@ -128,7 +142,8 @@ const FeaturedProject: React.FC = () => {
 
             </div>
             <div className={classes.imgWrapper}>
-              <img src="/graphics/landing/splash.png" alt="3d metal splash" />
+              {/* <img src="/graphics/landing/splash2x.png" alt="3d metal splash" /> */}
+              <img src="/graphics/landing/highres-splash.png" alt="3d metal splash" />
             </div>
           </Grid>
         </div>

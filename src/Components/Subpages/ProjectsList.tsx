@@ -115,7 +115,7 @@ const ProjectsList: React.FC = () => {
                       {p.name}
                       <span>
                         <Link onClick={() => redirect(p.pageUrl)} >
-                          <img src={smallPageButton} className={classes.projectLink} alt={`Click to access page about ${p.name}`} />
+                          <img src={smallPageButton} className={classes.projectLink} alt={`Click to access page about ${p.name} by Tom Amiri`} />
                         </Link>
                       </span>
                     </h1>

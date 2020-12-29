@@ -15,7 +15,7 @@ const useMyStyles = () => {
         background: "#121212",
         minHeight: "70vh",
         margin: "0 4%",
-        padding: "10vh 0 15vh 0",
+        padding: "10vh 0 5vh 0",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
@@ -44,7 +44,7 @@ const useMyStyles = () => {
         },
       },
       titleWrapper: {
-        maxWidth: "60%",
+        maxWidth: "80%",
         [breakpoints.down('lg')]: {
           maxWidth: "100%",
           textAlign: "left",
@@ -52,6 +52,10 @@ const useMyStyles = () => {
       },
       headshotWrapper: {
         marginTop: "4rem",
+        maxWidth: "30%",
+        [breakpoints.down('sm')]: {
+          display: "none",
+        }
       },
       bodyText: {
         fontSize: "24px",
@@ -61,8 +65,8 @@ const useMyStyles = () => {
         width: "80%",
         color: palette.common.white.main,
         [breakpoints.down('md')]: {
-          fontSize: "30px",
-          lineHeight: "40px",
+          fontSize: "16px",
+          lineHeight: "32px",
         },
       },
       jumboText: {
@@ -71,16 +75,28 @@ const useMyStyles = () => {
         fontWeight: 600,
         fontFamily: "Inter",
         color: palette.common.white.main,
+        width: "100%",
         [breakpoints.down('md')]: {
-          fontSize: "36px",
-          lineHeight: "45px",
+          fontSize: "40px",
+          lineHeight: "48px",
           width: "100%",
         }
       },
       transitionGradient: {
-        position: "absolute",
-        bottom: -300,
+        position: "relative",
+        maxWidth: "100vw",
         zIndex: zIndex?.layer3,
+        [breakpoints.down('lg')]: {
+          bottom: 0,
+        },
+        [breakpoints.down('md')]: {
+          minHeight: "35vh",
+        },
+        [breakpoints.up('xl')]: {
+          left: "50%",
+          transform: "translateX(-50%)",
+          bottom: "auto",
+        }
       }
     })
   })
@@ -107,7 +123,6 @@ const Landing: React.FC = () => {
             </div>
           </Grid>
         </div>
-        <img className={classes.transitionGradient} src="/graphics/landing/gradient1.png" alt="blue to purple gradient" />
       </Section>
     </>
   )
