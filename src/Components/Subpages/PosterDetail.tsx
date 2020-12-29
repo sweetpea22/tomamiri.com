@@ -22,7 +22,6 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
       flexDirection: "column",
       paddingBottom: "5rem",
       [breakpoints.up('md')]: {
-        minHeight: "85vh",
       },
       [breakpoints.up('lg')]: {
         justifyContent: "center",
