@@ -27,6 +27,7 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
       [breakpoints.up('lg')]: {
         justifyContent: "center",
         alignItems: "center",
+        margin: "0 10%",
 
       },
       "& > div": {
@@ -34,35 +35,6 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
           width: "100%",
         }
       },
-    },
-    linkWrapper: {
-      display: "flex",
-      justifyContent: "flex-end",
-      [breakpoints.up('lg')]: {
-        marginTop: "5vh",
-      },
-      position: "relative",
-      marginBottom: "3rem",
-      "& > a": {
-        textDecoration: "none",
-      }
-    },
-    link: {
-      fontWeight: "normal",
-      textDecoration: "none",
-      fontSize: "42px",
-      transition: "all 0.3s ease-out",
-      "&:hover": {
-        color: palette.primary.main,
-      },
-      "&:active": {
-        color: palette.primary.light,
-      },
-      [breakpoints.down('md')]: {
-        fontSize: "16px",
-        lineHeight: "24px",
-        fontWeight: "bolder",
-      }
     },
 
   })
