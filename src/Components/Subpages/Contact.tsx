@@ -29,6 +29,9 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
       [breakpoints.down('xl')]: {
         justifyContent: "flex-start",
       },
+      [breakpoints.down('md')]: {
+        paddingTop: "10vh",
+      },
     },
     img: {
       maxWidth: "100%",
@@ -41,12 +44,15 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
       display: "flex",
       flexDirection: "column",
       alignItems: "flex-start",
+      [breakpoints.down('md')]: {
+        marginLeft: constants.generalUnit * 2,
+      },
       "& > h1": {
         fontWeight: 700,
         fontSize: "70px",
         color: palette.common.white.main,
         [breakpoints.down('md')]: {
-          fontSize: "16px",
+          fontSize: "24px",
           fontWeight: "bolder",
         }
       },
