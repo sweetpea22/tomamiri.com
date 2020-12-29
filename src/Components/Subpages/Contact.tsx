@@ -22,23 +22,16 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
     contentContainer: {
       display: "flex",
       alignItems: "center",
-      justifyContent: "flex-start",
+      justifyContent: "center",
       [breakpoints.up('lg')]: {
         width: "100%",
       },
-      [breakpoints.up('xl')]: {
-        margin: 0,
-        position: "relative",
-        left: "50%",
-        transform: "translate(-50%)",
+      [breakpoints.down('xl')]: {
+        justifyContent: "flex-start",
       },
     },
-    imgWrapper: {
-      
-    },
     img: {
-      width: 465,
-      height: 360,
+      maxWidth: "100%",
       [breakpoints.down('md')]: {
         width: "100%",
         height: "auto",
@@ -53,7 +46,7 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
         fontSize: "70px",
         color: palette.common.white.main,
         [breakpoints.down('md')]: {
-          fontSize: "40px",
+          fontSize: "16px",
           fontWeight: "bolder",
         }
       },
@@ -95,10 +88,10 @@ const Contact: React.FC = () => {
       <Section>
         <div className={classes.wrapper}>
           <Grid container className={classes.contentContainer}>
-            <Grid>
+            <Grid item xs={3}>
               <img className={classes.img} src="/graphics/landing/phone.png" alt="3d glass phone by thomas amiri" />
             </Grid>
-            <div className={classes.textWrapper}>
+            <Grid item xs={5} className={classes.textWrapper}>
               <p>Drop me a line</p>
               <h1>tomoamiri(at)gmail.com</h1>
               <div className={classes.iconWrapper}>
@@ -109,7 +102,7 @@ const Contact: React.FC = () => {
                   <img className={classes.icon} src={dribIcon} alt="Dribble link" />
                 </a>
               </div>
-            </div>
+            </Grid>
           </Grid>
         </div>
       </Section>

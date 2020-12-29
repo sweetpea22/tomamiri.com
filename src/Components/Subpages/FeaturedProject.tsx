@@ -141,14 +141,17 @@ const FeaturedProject: React.FC = () => {
               <p className={classes.bodyText}>
                 Notifications for Metamask (Concept)
               </p>
-              <h1 className={classes.jumboText} onClick={() => redirect("/meta-alert")}>
-                Meta-alert
+              <a href="/meta-alert" style={{ textDecoration: "none" }}>
+                <h1 className={classes.jumboText}>
+                  Meta-alert
                 <span>
-                  <Link onClick={() => redirect("/meta-alert")}>
-                    <img className={classes.projectLink} src={pageButton} alt="Click here to access more detail about meta-alert" />
-                  </Link>
-                </span>
-              </h1>
+                    <Link onClick={() => redirect("/meta-alert")}>
+                      <img className={classes.projectLink} src={pageButton} alt="Click here to access more detail about meta-alert" />
+                    </Link>
+                  </span>
+                </h1>
+              </a>
+
 
             </div>
             <div className={classes.imgWrapper}>
