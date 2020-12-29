@@ -33,6 +33,9 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
         transform: "translate(-50%)",
       },
     },
+    imgWrapper: {
+      
+    },
     img: {
       width: 465,
       height: 360,
@@ -92,7 +95,7 @@ const Contact: React.FC = () => {
       <Section>
         <div className={classes.wrapper}>
           <Grid container className={classes.contentContainer}>
-            <Grid item xs={4} lg={5}>
+            <Grid>
               <img className={classes.img} src="/graphics/landing/phone.png" alt="3d glass phone by thomas amiri" />
             </Grid>
             <div className={classes.textWrapper}>

@@ -11,7 +11,6 @@ const useMyStyles = () => {
 
     return createStyles({
       wrapper: {
-        maxWidth: "2560px",
         display: "flex",
         background: "#ddd",
         margin: "0",
@@ -32,30 +31,32 @@ const useMyStyles = () => {
         justifyContent: "space-between",
         alignItems: "center",
         [breakpoints.down('md')]: {
-          padding: "10% 0 0 0",
           width: "100%",
         },
         [breakpoints.up('lg')]: {
-          padding: "0% 5% 0 5%",
+          padding: 0,
         },
         [breakpoints.up('xl')]: {
-          padding: "0% 10% 0 10%",
+          padding: 0,
         },
       },
       titleWrapper: {
-        maxWidth: "60%",
+        maxWidth: "50%",
+        marginLeft: "5%",
         [breakpoints.down('lg')]: {
+          marginTop: "5vh",
           maxWidth: "100%",
-          textAlign: "left",
         }
       },
       imgWrapper: {
-        marginTop: "4rem",
+        maxWidth: "40%",
         "& > img": {
-          maxHeight: "1500px",
-          maxWidth: "750px",
           position: "relative",
-          right: -450,
+          right: 0,
+          width: "100%",
+        },
+        [breakpoints.down('md')]: {
+          display: "none",
         }
       },
       bodyText: {
@@ -63,27 +64,36 @@ const useMyStyles = () => {
         fontWeight: 400,
         fontFamily: "IBM Plex Mono",
         lineHeight: "30px",
-        width: "80%",
         color: palette.common.black.main,
         textTransform: "uppercase",
+        [breakpoints.down('md')]: {
+          fontSize: "16px",
+          lineHeight: "24px",
+        },
       },
       jumboText: {
-        fontSize: "120px",
-        lineHeight: "125px",
+        fontSize: "100px",
+        lineHeight: "115px",
         fontWeight: 600,
         fontFamily: "Inter",
         cursor: "pointer",
+        marginTop: constants.generalUnit,
         transition: "all 0.5s ease-out",
         "& > span": {
           marginLeft: constants.generalUnit * 5,
+          [breakpoints.down('lg')]: {
+            display: "none",
+          },
         },
         color: palette.common.black.main,
-        [breakpoints.down('md')]: {
-          fontSize: "36px",
-          lineHeight: "45px",
-          width: "100%",
+        [breakpoints.down('lg')]: {
+          fontSize: "60px",
+          lineHeight: "72px",
         },
         "&:hover": {
+          color: "#F5861C",
+        },
+        "&:focus": {
           color: "#F5861C",
         },
       },
@@ -142,7 +152,6 @@ const FeaturedProject: React.FC = () => {
 
             </div>
             <div className={classes.imgWrapper}>
-              {/* <img src="/graphics/landing/splash2x.png" alt="3d metal splash" /> */}
               <img src="/graphics/landing/highres-splash.png" alt="3d metal splash" />
             </div>
           </Grid>
