@@ -9,6 +9,8 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
     wrapper: {
       maxWidth: "2560px",
       display: "flex",
+      background: "#ddd",
+
       paddingTop: "10vh",
       margin: "0% 10% 0 10%",
       flexDirection: "column",

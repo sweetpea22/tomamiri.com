@@ -1,7 +1,7 @@
 import React from 'react'
 import Section from "../Modules/Section";
 import { createStyles, ITheme, makeStyles } from "@chainsafe/common-theme";
-import { Grid, Link, useHistory } from "@chainsafe/common-components";
+import { Grid } from "@chainsafe/common-components";
 
 const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: ITheme) => {
 
@@ -10,6 +10,8 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       maxWidth: "2560px",
       display: "flex",
       paddingTop: "10vh",
+      background: "#ddd",
+
       margin: "0% 10% 0 10%",
       flexDirection: "column",
       [breakpoints.up('xl')]: {
@@ -210,9 +212,8 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
 
 const MetaDetail: React.FC = () => {
   const classes = useStyles();
-  const { redirect } = useHistory();
   return (
-    <>
+    <div style={{ background: "#ddd" }}>
       <Section>
         <div className={classes.wrapper}>
           <Grid container className={classes.contentContainer}>
@@ -221,7 +222,6 @@ const MetaDetail: React.FC = () => {
               <br></br>
               <p className={classes.subtitleText}>Notifications for the Metamask wallet</p>
               <div className={classes.imgContainer}>
-                <img className={classes.firstMockupImg} src="/graphics/meta-alert/final1.png" alt="meta-alert prototype" />
               </div>
             </div>
             <div>
@@ -252,87 +252,21 @@ const MetaDetail: React.FC = () => {
                 Next, I leveraged some well-documented Ethereum personas and created user journeys for three types of users: an artist, investor, and socializer. The user journey’s really emphasized to me the breadth of needs that needed to be accommodated in the interface. They also highlighted key opportunities for integrating alerts. I then mapped out task flows to exactly pinpoint where and when alerts should interact with the user.
               </p>
             </div>
-            <div className={classes.mockupContainer}>
-              <img src="/graphics/meta-alert/user-journey1.png" className={classes.mockup} alt="" />
-              <img src="/graphics/meta-alert/user-journey2.png" className={classes.mockup} alt="" />
-              <img src="/graphics/meta-alert/user-journey3.png" className={classes.mockup} alt="" />
-            </div>
-            <div>
-              <img src="/graphics/meta-alert/task-flows.png" className={classes.mockup} alt="" />
-            </div>
-            <div className={classes.mockupContainer}>
-              <img src="/graphics/meta-alert/taskflow1.png" className={classes.mockup} alt="" />
-              <img src="/graphics/meta-alert/taskflow2.png" className={classes.mockup} alt="" />
-              <img src="/graphics/meta-alert/taskflow3.png" className={classes.mockup} alt="" />
-            </div>
-            <div>
-              <p className={classes.subHeading}>Wireframes</p>
-              <p className={classes.bodyText}>
-                Once I established the context of alerts and their structure I hopped into wire framing. From paper sketches I worked into high fidelity mock ups. Metamask is already very compact as a browser plugin so it was a challenge to find an optimal layout without cluttering the UI or overwhelming the user.
+
+            <p className={classes.subHeading}>Wireframes</p>
+            <p className={classes.bodyText}>
+              Once I established the context of alerts and their structure I hopped into wire framing. From paper sketches I worked into high fidelity mock ups. Metamask is already very compact as a browser plugin so it was a challenge to find an optimal layout without cluttering the UI or overwhelming the user.
               </p>
-            </div>
-            <div className={classes.mockupContainer}>
-              <img className={classes.wireframeImg} src="/graphics/meta-alert/wireframes.png" alt="" />
-            </div>
             <div>
               <p className={classes.subHeading}>Final Concept</p>
               <p className={classes.bodyText}>
                 I asked a friend who was also a Metamask user to test my prototype. From this interview I learned that how I categorized the tabs was confusing and that some of the new elements were unintuitive. So I revisited my wireframes and focused on keep the existing UI more intact while creating a better sense of separation between functions.
               </p>
             </div>
-            {/* final concept  */}
-            <div className={classes.finalConceptWrapper}>
-              <div className={classes.finalConceptContainer}>
-                <img src="/graphics/meta-alert/final1.png" alt="Prototype of Metamask notifications by Thomas Amiri" />
-                <div className={classes.captionContainer}>
-                  <p className={classes.subtitleTextLight}>
-                    Flip between your funds and your plugins
-                  </p>
-                  <div></div>
-                  <p className={classes.subtitleTextLight}>
-                    Know when your wallet processes a transaction
-                  </p>
-                  <div></div>
-                </div>
-              </div>
-              <div className={classes.finalConceptContainer}>
-                <img src="/graphics/meta-alert/final2.png" alt="Prototype of Metamask notifications by Thomas Amiri" />
-                <div className={classes.captionContainer}>
-                  <p className={classes.subtitleTextLight}>
-                    Be notified of your other persona’s activity
-                  </p>
-                  <div></div>
-                </div>
-              </div>
-              <div className={classes.finalConceptContainer}>
-                <img src="/graphics/meta-alert/final3.png" alt="Prototype of Metamask notifications by Thomas Amiri" />
-                <div className={classes.captionContainer}>
-                  <p className={classes.subtitleTextLight}>
-                    Conveniently view dapp
-                    communications
-                  </p>
-                  <div></div>
-                </div>
-              </div>
-              <div className={classes.finalConceptContainer}>
-                <img src="/graphics/meta-alert/final4.png" alt="Prototype of Metamask notifications by Thomas Amiri" />
-                <div className={classes.captionContainer}>
-                  <p className={classes.subtitleTextLight}>
-                    Control what dapps connect to your wallet and manage their permissions
-                  </p>
-                  <div></div>
-                </div>
-              </div>
-            </div>
           </Grid>
-          <div className={classes.linkWrapper}>
-            <Link onClick={() => redirect('/kemistry')}>
-              <p className={classes.link}>Check out next project &gt;</p>
-            </Link>
-          </div>
         </div>
       </Section>
-    </>
+    </div>
   )
 }
 

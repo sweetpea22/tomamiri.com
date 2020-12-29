@@ -10,6 +10,8 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       maxWidth: "2560px",
       display: "flex",
       paddingTop: "10vh",
+      background: "#ddd",
+
       margin: "0% 10% 0 10%",
       flexDirection: "column",
       [breakpoints.up('xl')]: {

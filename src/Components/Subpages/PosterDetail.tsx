@@ -1,16 +1,15 @@
 import React from 'react'
 import Section from "../Modules/Section";
 import { createStyles, ITheme, makeStyles } from "@chainsafe/common-theme";
-import { Grid, useHistory } from "@chainsafe/common-components";
+import { Grid, } from "@chainsafe/common-components";
 
 const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
 
   return createStyles({
     wrapper: {
-      maxWidth: "2560px",
       display: "flex",
       paddingTop: "10vh",
-      margin: "0% 10% 0 10%",
+      background: "#ddd",
       flexDirection: "column",
       [breakpoints.up('xl')]: {
         justifyContent: "center",
@@ -28,6 +27,7 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
       [breakpoints.up('lg')]: {
         justifyContent: "center",
         alignItems: "center",
+
       },
       "& > div": {
         [breakpoints.down('lg')]: {
@@ -70,9 +70,8 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
 
 const PosterDetail: React.FC = () => {
   const classes = useStyles();
-  // const { redirect } = useHistory();
   return (
-    <>
+    <div style={{ background: "#ddd" }}>
       <Section>
         <div className={classes.wrapper}>
           <Grid container className={classes.contentContainer}>
@@ -81,18 +80,18 @@ const PosterDetail: React.FC = () => {
               <img src="/graphics/posters/design-week1.png" />
               <img src="/graphics/posters/design-week2.png" />
               <img src="/graphics/posters/event-poster2.png" />
-              <img src="/graphics/posters/even-poster3.png" />
+              <img src="/graphics/posters/eventposter.png" />
               <img src="/graphics/posters/event-poster.png" />
               <img src="/graphics/posters/film-poster.png" />
               <img src="/graphics/posters/film-poster2.png" />
-              <img src="/graphics/posters/film-poster3.png" />
               <img src="/graphics/posters/music-poster2.png" />
+              <img src="/graphics/posters/filmposter.png" />
               <img src="/graphics/posters/music-poster3.png" />
             </div>
           </Grid>
         </div>
       </Section>
-    </>
+    </div>
   )
 }
 
