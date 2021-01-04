@@ -3,7 +3,6 @@ import Section from "../Modules/Section";
 import { createStyles, ITheme, makeStyles } from "@chainsafe/common-theme";
 import { Grid } from "@chainsafe/common-components";
 import Slider from "../Modules/Slider";
-import { constants } from "buffer";
 
 const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: ITheme) => {
 
@@ -181,6 +180,7 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
 
 const MetaDetail: React.FC = () => {
   const classes = useStyles();
+
   return (
     <div style={{ background: "#ddd" }}>
       <Section>
