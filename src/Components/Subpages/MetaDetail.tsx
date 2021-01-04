@@ -3,6 +3,7 @@ import Section from "../Modules/Section";
 import { createStyles, ITheme, makeStyles } from "@chainsafe/common-theme";
 import { Grid } from "@chainsafe/common-components";
 import Slider from "../Modules/Slider";
+import { constants } from "buffer";
 
 const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: ITheme) => {
 
@@ -86,7 +87,6 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       },
     },
     firstMockupImg: {
-
       maxWidth: "300px",
       maxHeight: "470px",
     },
@@ -105,6 +105,47 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
         maxWidth: "730px",
       },
     },
+    finalWrapper: {
+      display: "flex",
+      justifyContent: "space-between",
+      marginTop: "2rem",
+      [breakpoints.down('md')]: {
+        flexDirection: "column",
+        justifyContent: "flex-start",
+      },
+    },
+    finalTextWrapper: {
+      marginLeft: constants.generalUnit * 4,
+      [breakpoints.down('lg')]: {
+        marginLeft: 0,
+        marginTop: constants.generalUnit,
+      }
+
+    },
+    finalMockupWrapper: {
+      display: "flex",
+      [breakpoints.down('lg')]: {
+        flexDirection: "column",
+      },
+      "& > img": {
+        width: "303px",
+        height: "auto",
+      },
+    },
+    finalBodyText: {
+      fontSize: "20px",
+      lineHeight: "28px",
+      fontWeight: "normal",
+      color: palette.common.black.main,
+      marginBottom: constants.generalUnit * 4,
+      width: "100%",
+      [breakpoints.up('lg')]: {
+        maxWidth: "200px",
+      },
+      [breakpoints.up('xl')]: {
+        maxWidth: "300px",
+      },
+    }
 
   })
 })
@@ -148,27 +189,43 @@ const MetaDetail: React.FC = () => {
               </p>
               </div>
             </div>
-
             <Slider />
-            {/* <div>
-              <p className={classes.subHeading}>The Design Process</p>
-              <p className={classes.bodyText}>
-                I got a lot of insight from the feature discussions on the Metamask Github and was sure I wanted to keep my design aligned with the Snap plugin roadmap. This helped me differentiate between two types of alerts: system alerts and plugin alerts. The former were global to all the wallets in your Metamask, while the latter were local to a specific address.
+            <div className={classes.summaryWrapper}>
+              <div className={classes.summaryTextWrapper}>
+                <p className={classes.subHeading}>Final Concept</p>
+                <p className={classes.bodyText}>
+                  I asked a friend who was also a Metamask user to test my prototype. From this interview I learned that how I categorized the tabs was confusing and that some of the new elements were unintuitive. So I revisited my wireframes and focused on keep the existing UI more intact while creating a better sense of separation between functions.
               </p>
-              <p className={classes.bodyText}>
-                Next, I leveraged some well-documented Ethereum personas and created user journeys for three types of users: an artist, investor, and socializer. The user journey’s really emphasized to me the breadth of needs that needed to be accommodated in the interface. They also highlighted key opportunities for integrating alerts. I then mapped out task flows to exactly pinpoint where and when alerts should interact with the user.
-              </p>
+              </div>
             </div>
-
-            <p className={classes.subHeading}>Wireframes</p>
-            <p className={classes.bodyText}>
-              Once I established the context of alerts and their structure I hopped into wire framing. From paper sketches I worked into high fidelity mock ups. Metamask is already very compact as a browser plugin so it was a challenge to find an optimal layout without cluttering the UI or overwhelming the user.
-              </p> */}
-            <div>
-              <p className={classes.subHeading}>Final Concept</p>
-              <p className={classes.bodyText}>
-                I asked a friend who was also a Metamask user to test my prototype. From this interview I learned that how I categorized the tabs was confusing and that some of the new elements were unintuitive. So I revisited my wireframes and focused on keep the existing UI more intact while creating a better sense of separation between functions.
-              </p>
+            <div className={classes.finalWrapper}>
+              <div className={classes.finalMockupWrapper}>
+                <img src="/graphics/metaalert/final1.png" />
+                <div className={classes.finalTextWrapper}>
+                  <p className={classes.finalBodyText}>Flip between your funds and your plugins</p>
+                  <p className={classes.finalBodyText}>Know when your wallet processes a transaction</p>
+                </div>
+              </div>
+              <div className={classes.finalMockupWrapper}>
+                <img src="/graphics/metaalert/final2.png" />
+                <div className={classes.finalTextWrapper}>
+                  <p className={classes.finalBodyText}>Be notified of your other persona’s activity</p>
+                </div>
+              </div>
+            </div>
+            <div className={classes.finalWrapper}>
+              <div className={classes.finalMockupWrapper}>
+                <img src="/graphics/metaalert/final3.png" />
+                <div className={classes.finalTextWrapper}>
+                  <p className={classes.finalBodyText}>Conveniently view dapp communications</p>
+                </div>
+              </div>
+              <div className={classes.finalMockupWrapper}>
+                <img src="/graphics/metaalert/final4.png" />
+                <div className={classes.finalTextWrapper}>
+                  <p className={classes.finalBodyText}>Control what dapps connect to your wallet and manage their permissions</p>
+                </div>
+              </div>
             </div>
           </Grid>
         </div>
