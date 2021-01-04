@@ -1,7 +1,7 @@
 import React from 'react'
 import Section from "../Modules/Section";
 import { createStyles, ITheme, makeStyles } from "@chainsafe/common-theme";
-import { Grid, useHistory } from "@chainsafe/common-components";
+import { Grid } from "@chainsafe/common-components";
 
 const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: ITheme) => {
 
@@ -154,7 +154,6 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
 
 const KemistryDetail: React.FC = () => {
   const classes = useStyles();
-  const { redirect } = useHistory();
   return (
     <div style={{ background: "#ddd" }}>
       <Section>
