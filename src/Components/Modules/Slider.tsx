@@ -2,31 +2,54 @@ import React, { useState } from "react";
 import {
   createStyles, ITheme, makeStyles
 } from "@chainsafe/common-theme";
+import clsx from "clsx";
 import { BiRightArrowCircle, BiLeftArrowCircle } from "react-icons/bi";
 
 const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: ITheme) => {
   return createStyles({
     container: {
-      background: palette.common.black.main,
+      background: "#121212",
       position: "relative",
-      height: "100vh",
+      minHeight: "70vh",
+      display: "flex",
+      justifyContent: "center",
     },
     slideWrapper: {
       display: "flex",
       justifyContent: "center",
+      alignItems: "center",
       flexDirection: "column",
       opacity: 0,
       transitionDuration: "1s ease",
-      "&:active": {
-        opacity: 1,
-      },
       "& > img": {
         maxWidth: "80%",
       }
     },
+    currentSlide: {
+      opacity: 1,
+      transitionDuration: "1s",
+    },
     textWrapper: {
       display: "flex",
       width: "100%",
+      flexDirection: "column",
+      alignItems: "center",
+      marginTop: constants.generalUnit * 4,
+
+    },
+    title: {
+      color: palette.common.white.main,
+      fontFamily: "IBM Plex Mono",
+      fontSize: "20px",
+
+    },
+    bodyText: {
+      color: palette.common.white.main,
+      marginTop: constants.generalUnit * 2,
+      fontSize: "16px",
+      lineHeight: "24px",
+      fontWeight: "normal",
+      maxWidth: 600,
     },
     icon: {
       position: "absolute",
@@ -56,12 +79,12 @@ const slides = [
   {
     img: "/graphics/metaalert/process2.png",
     title: "Design Process 🧠",
-    caption: "Next, I leveraged some well-documented Ethereum personas and created user journeys for three types of users: an artist, investor, and socializer. The user journey’s really emphasized to me the breadth of needs that needed to be accommodated in the interface. They also highlighted key opportunities for integrating alerts. I then mapped out task flows to exactly pinpoint where and when alerts should interact with the user."
+    caption: "Next, I leveraged some well-documented Ethereum personas and created user journeys for three types of users: an artist, investor, and socializer. The user journeys really emphasized to me the breadth of needs that needed to be accommodated in the interface. They also highlighted key opportunities for integrating alerts. Then, I mapped out task flows to exactly pinpoint where and when alerts should interact with the user."
   },
   {
     img: "/graphics/metaalert/process3.png",
     title: "Wireframes",
-    caption: "Once I established the context of alerts and their structure I hopped into wire framing. From paper sketches I worked into high fidelity mock ups. Metamask is already very compact as a browser plugin so it was a challenge to find an optimal layout without cluttering the UI or overwhelming the user. "
+    caption: "Once I established the structure and context of alerts, I hopped into wireframing. From paper sketches, I worked into high fidelity mock ups. Metamask is already very compact as a browser plugin so it was a challenge to find an optimal layout without cluttering the UI or overwhelming the user. "
   },
 
 ]
@@ -92,13 +115,13 @@ const Slider: React.FC = () => {
       <BiRightArrowCircle onClick={nextSlide} className={classes.icon} />
       {slides.map((slide, index) =>
       (
-        <div className={classes.slideWrapper} key={index}>
-          {index === current && (
+        <div className={clsx(classes.slideWrapper, { [classes.currentSlide]: index === current })} key={index}>
+          { index === current && (
             <>
               <img src={slide.img} />
               <div className={classes.textWrapper}>
-                <p>{slide.title}</p>
-                <p>{slide.caption}</p>
+                <p className={classes.title}>{slide.title}</p>
+                <p className={classes.bodyText}>{slide.caption}</p>
               </div>
             </>
           )}
