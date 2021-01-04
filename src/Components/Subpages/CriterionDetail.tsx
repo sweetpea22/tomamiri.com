@@ -14,10 +14,7 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
 
       margin: "0% 10% 0 10%",
       flexDirection: "column",
-      [breakpoints.up('xl')]: {
-        justifyContent: "center",
-        alignItems: "center",
-      },
+
     },
     contentContainer: {
       position: "relative",
@@ -55,9 +52,10 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       marginBottom: constants.generalUnit * 2,
     },
     subHeading: {
-      fontSize: "45px",
+      fontSize: "24px",
+      fontFamily: "IBM Plex Mono",
       fontWeight: "bold",
-      marginBottom: constants.generalUnit * 2,
+      marginBottom: constants.generalUnit,
     },
     subtitleTextLight: {
       fontSize: "28px",
@@ -73,8 +71,8 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       margin: "3rem 0",
     },
     bodyText: {
-      fontSize: "28px",
-      lineHeight: "38px",
+      fontSize: "20px",
+      lineHeight: "28px",
       fontWeight: "normal",
       color: palette.common.black.main,
       marginBottom: constants.generalUnit * 4,
@@ -135,7 +133,8 @@ const CriterionDetail: React.FC = () => {
   const classes = useStyles();
   const { redirect } = useHistory();
   return (
-    <>
+    <div style={{ background: "#ddd" }}>
+
       <Section>
         <div className={classes.wrapper}>
           <Grid container className={classes.contentContainer}>
@@ -193,13 +192,13 @@ const CriterionDetail: React.FC = () => {
 
           </Grid>
           <div className={classes.linkWrapper}>
-            <Link onClick={() => redirect('/kemistry')}>
+            <a href='/cadencia'>
               <p className={classes.link}>Check out next project &gt;</p>
-            </Link>
+            </a>
           </div>
         </div>
       </Section>
-    </>
+    </div>
   )
 }
 

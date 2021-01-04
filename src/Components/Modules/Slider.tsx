@@ -13,6 +13,12 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       minHeight: "70vh",
       display: "flex",
       justifyContent: "center",
+      [breakpoints.down('sm')]: {
+        minHeight: "90vh",
+      },
+      [breakpoints.down(365)]: {
+        minHeight: "110vh",
+      }
     },
     slideWrapper: {
       display: "flex",
@@ -70,6 +76,9 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       },
       [breakpoints.down('md')]: {
         top: "90%",
+      },
+      [breakpoints.down('sm')]: {
+        top: "92%",
       }
     }
   })
@@ -116,7 +125,6 @@ const Slider: React.FC = () => {
   if (!Array.isArray(slides) || slides.length <= 0) {
     return null;
   }
-  console.log(current);
 
   return (
     <div className={classes.container}>

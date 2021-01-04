@@ -26,7 +26,6 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
         alignItems: "center",
         justifyContent: "flex-end"
       },
-
     },
     logo: {
       width: constants.generalUnit * 4,

@@ -26,16 +26,51 @@ const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
       [breakpoints.up('lg')]: {
         justifyContent: "center",
         alignItems: "center",
-        margin: "0 10%",
-
       },
-      "& > div": {
-        [breakpoints.down('lg')]: {
+
+    },
+    posterWrapper: {
+      display: "flex",
+      flexWrap: "wrap",
+      [breakpoints.down('md')]: {
+        flexDirection: "column",
+      },
+      "& > img": {
+        padding: "1rem",
+        [breakpoints.down('md')]: {
           width: "100%",
         }
-      },
+      }
     },
-
+    linkWrapper: {
+      display: "flex",
+      justifyContent: "flex-end",
+      [breakpoints.up('lg')]: {
+        marginTop: "5vh",
+      },
+      position: "relative",
+      marginBottom: "3rem",
+      "& > a": {
+        textDecoration: "none",
+      }
+    },
+    link: {
+      fontWeight: "normal",
+      textDecoration: "none",
+      fontSize: "42px",
+      transition: "all 0.3s ease-out",
+      "&:hover": {
+        color: palette.primary.main,
+      },
+      "&:active": {
+        color: palette.primary.light,
+      },
+      [breakpoints.down('md')]: {
+        fontSize: "16px",
+        lineHeight: "24px",
+        fontWeight: "bolder",
+      }
+    },
   })
 })
 
@@ -46,23 +81,41 @@ const PosterDetail: React.FC = () => {
       <Section>
         <div className={classes.wrapper}>
           <Grid container className={classes.contentContainer}>
-            <div style={{ display: "flex", flexWrap: "wrap" }}>
-              <img src="/graphics/posters/aphorism.png" />
-              <img src="/graphics/posters/design-week1.png" />
-              <img src="/graphics/posters/design-week2.png" />
-              <img src="/graphics/posters/event-poster2.png" />
-              <img src="/graphics/posters/eventposter.png" />
-              <img src="/graphics/posters/event-poster.png" />
+            <div className={classes.posterWrapper}>
+              <img src="/graphics/posters/blob.png" />
               <img src="/graphics/posters/film-poster.png" />
+            </div>
+            <div className={classes.posterWrapper}>
               <img src="/graphics/posters/film-poster2.png" />
-              <img src="/graphics/posters/music-poster2.png" />
-              <img src="/graphics/posters/filmposter.png" />
+              <img src="/graphics/posters/blaise.png" />
+            </div>
+            <div className={classes.posterWrapper}>
+              <img src="/graphics/posters/aphorism.png" />
+              <img src="/graphics/posters/design-week2.png" />
+            </div>
+            <div className={classes.posterWrapper}>
+              <img src="/graphics/posters/eventposter.png" />
+            </div>
+            <div className={classes.posterWrapper}>
               <img src="/graphics/posters/music-poster3.png" />
+              <img src="/graphics/posters/design-week1.png" />
+            </div>
+            <div>
+              <img src="/graphics/posters/event-poster.png" />
+              <img src="/graphics/posters/music-poster2.png" />
+            </div>
+            <div className={classes.posterWrapper}>
+              <img src="/graphics/posters/event-poster2.png" />
             </div>
           </Grid>
+          <div className={classes.linkWrapper}>
+            <a href='/posters'>
+              <p className={classes.link}>Check out next project &gt;</p>
+            </a>
+          </div>
         </div>
       </Section>
-    </div>
+    </div >
   )
 }
 

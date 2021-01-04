@@ -109,14 +109,14 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       display: "flex",
       justifyContent: "space-between",
       marginTop: "2rem",
-      [breakpoints.down('md')]: {
+      [breakpoints.down('lg')]: {
         flexDirection: "column",
         justifyContent: "flex-start",
       },
     },
     finalTextWrapper: {
       marginLeft: constants.generalUnit * 4,
-      [breakpoints.down('lg')]: {
+      [breakpoints.down('md')]: {
         marginLeft: 0,
         marginTop: constants.generalUnit,
       }
@@ -124,7 +124,8 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
     },
     finalMockupWrapper: {
       display: "flex",
-      [breakpoints.down('lg')]: {
+      marginBottom: "2rem",
+      [breakpoints.down('md')]: {
         flexDirection: "column",
       },
       "& > img": {
@@ -138,15 +139,43 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       fontWeight: "normal",
       color: palette.common.black.main,
       marginBottom: constants.generalUnit * 4,
-      width: "100%",
+      width: "70%",
       [breakpoints.up('lg')]: {
-        maxWidth: "200px",
+        maxWidth: "250px",
       },
       [breakpoints.up('xl')]: {
         maxWidth: "300px",
       },
-    }
-
+    },
+    linkWrapper: {
+      display: "flex",
+      justifyContent: "flex-end",
+      [breakpoints.up('lg')]: {
+        marginTop: "5vh",
+      },
+      position: "relative",
+      marginBottom: "3rem",
+      "& > a": {
+        textDecoration: "none",
+      }
+    },
+    link: {
+      fontWeight: "normal",
+      textDecoration: "none",
+      fontSize: "42px",
+      transition: "all 0.3s ease-out",
+      "&:hover": {
+        color: palette.primary.main,
+      },
+      "&:active": {
+        color: palette.primary.light,
+      },
+      [breakpoints.down('md')]: {
+        fontSize: "16px",
+        lineHeight: "24px",
+        fontWeight: "bolder",
+      }
+    },
   })
 })
 
@@ -228,6 +257,11 @@ const MetaDetail: React.FC = () => {
               </div>
             </div>
           </Grid>
+        </div>
+        <div className={classes.linkWrapper}>
+          <a href='/kemistry'>
+            <p className={classes.link}>Check out next project &gt;</p>
+          </a>
         </div>
       </Section>
     </div>

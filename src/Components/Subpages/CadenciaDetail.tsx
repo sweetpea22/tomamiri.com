@@ -54,7 +54,8 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       marginBottom: constants.generalUnit * 2,
     },
     subHeading: {
-      fontSize: "45px",
+      fontSize: "24px",
+      fontFamily: "IBM Plex Mono",
       fontWeight: "bold",
       marginBottom: constants.generalUnit * 2,
     },
@@ -62,11 +63,16 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       display: "flex",
       justifyItems: "center",
       alignItems: "center",
-      margin: "3rem 0",
+      margin: "1rem 0",
+      "& > img": {
+        [breakpoints.down('lg')]: {
+          width: "100%",
+        }
+      }
     },
     bodyText: {
-      fontSize: "28px",
-      lineHeight: "38px",
+      fontSize: "20px",
+      lineHeight: "28px",
       fontWeight: "normal",
       color: palette.common.black.main,
       marginBottom: constants.generalUnit * 4,
@@ -124,9 +130,11 @@ const CadenciaDetail: React.FC = () => {
   const classes = useStyles();
   const { redirect } = useHistory();
   return (
-    <>
+    <div style={{
+      background: "#ddd"
+    }}>
       <Section>
-        <div className={classes.wrapper}>
+        < div className={classes.wrapper}>
           <Grid container className={classes.contentContainer}>
             <div>
               <h1 className={classes.title}>Cadencia</h1>
@@ -168,17 +176,17 @@ const CadenciaDetail: React.FC = () => {
               </p>
             </div>
 
-            <iframe title="Cadencia Video" width="100%" height="500" src="https://www.youtube.com/embed/7sX5T9b937o" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+            <iframe title="Cadencia Video" width="80%" height="500" src="https://www.youtube.com/embed/7sX5T9b937o" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
           </Grid>
           <div className={classes.linkWrapper}>
-            <Link onClick={() => redirect('/kemistry')}>
+            <a href='/posters'>
               <p className={classes.link}>Check out next project &gt;</p>
-            </Link>
+            </a>
           </div>
         </div>
-      </Section>
-    </>
+      </Section >
+    </div >
   )
 }
 
