@@ -11,13 +11,8 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       display: "flex",
       paddingTop: "10vh",
       background: "#ddd",
-
       margin: "0% 10% 0 10%",
       flexDirection: "column",
-      [breakpoints.up('xl')]: {
-        justifyContent: "center",
-        alignItems: "center",
-      },
     },
     contentContainer: {
       position: "relative",
@@ -26,10 +21,6 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       paddingBottom: "5rem",
       [breakpoints.up('md')]: {
         minHeight: "85vh",
-      },
-      [breakpoints.up('lg')]: {
-        justifyContent: "center",
-        alignItems: "center",
       },
       "& > div": {
         [breakpoints.down('lg')]: {
@@ -54,23 +45,34 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       fontWeight: "normal",
       marginBottom: constants.generalUnit * 2,
     },
-    subHeading: {
-      fontSize: "45px",
-      fontWeight: "bold",
-      marginBottom: constants.generalUnit * 2,
+    summaryWrapper: {
+      display: "flex",
+      alignItems: "center",
+      marginTop: constants.generalUnit * 8,
+      [breakpoints.down("md")]: {
+        flexDirection: "column",
+        alignItems: "flex-start",
+      },
     },
-    subtitleTextLight: {
-      fontSize: "28px",
-      lineHeight: "38px",
-      fontWeight: "lighter",
-      maxWidth: "630px",
+    summaryTextWrapper: {
+      marginLeft: constants.generalUnit * 6,
+      maxWidth: "60%",
+      [breakpoints.down("md")]: {
+        marginLeft: 0,
+        maxWidth: "100%",
+        marginTop: constants.generalUnit * 3,
+      }
+    },
+    subHeading: {
+      fontSize: "24px",
+      fontFamily: "IBM Plex Mono",
+      fontWeight: "bolder",
       marginBottom: constants.generalUnit * 2,
     },
     imgContainer: {
       display: "flex",
       justifyItems: "center",
       alignItems: "center",
-      margin: "3rem 0",
     },
     foxImg: {
       position: "relative",
@@ -83,15 +85,14 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       },
     },
     firstMockupImg: {
-      [breakpoints.up('lg')]: {
-        display: "block",
-      },
-      display: "none",
+
+      maxWidth: "300px",
+      maxHeight: "470px",
     },
 
     bodyText: {
-      fontSize: "28px",
-      lineHeight: "38px",
+      fontSize: "20px",
+      lineHeight: "28px",
       fontWeight: "normal",
       color: palette.common.black.main,
       marginBottom: constants.generalUnit * 4,
@@ -103,110 +104,7 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
         maxWidth: "730px",
       },
     },
-    linkWrapper: {
-      display: "flex",
-      justifyContent: "flex-end",
-      [breakpoints.up('lg')]: {
-        marginTop: "5vh",
-      },
-      position: "relative",
-      marginBottom: "3rem",
-      "& > a": {
-        textDecoration: "none",
-      }
-    },
-    link: {
-      fontWeight: "normal",
-      textDecoration: "none",
-      fontSize: "42px",
-      transition: "all 0.3s ease-out",
-      "&:hover": {
-        color: palette.primary.main,
-      },
-      "&:active": {
-        color: palette.primary.light,
-      },
-      [breakpoints.down('md')]: {
-        fontSize: "16px",
-        lineHeight: "24px",
-        fontWeight: "bolder",
-      }
-    },
-    mockupContainer: {
-      display: "flex",
-      maxWidth: "100vw",
-      margin: "4rem 0",
-      [breakpoints.down('lg')]: {
-        width: "100%",
-        maxWidth: "100%",
-      }
 
-    },
-    mockup: {
-      maxWidth: "30%",
-    },
-    wireframeImg: {
-      [breakpoints.down('lg')]: {
-        width: "100%",
-      },
-    },
-    finalConceptWrapper: {
-      display: "flex",
-      flexDirection: "column",
-    },
-    captionContainer: {
-      display: "flex",
-      flexDirection: "column",
-      "& > p": {
-        margin: "0 3rem 2rem 1rem",
-        maxWidth: "300px",
-        [breakpoints.down('md')]: {
-          margin: "0 0 .5rem 1rem"
-        },
-        [breakpoints.down('sm')]: {
-          fontSize: "16px",
-          lineHeight: "24px",
-          maxWidth: "100%",
-          margin: "1vh 0",
-          paddingLeft: "2vw",
-        }
-      },
-      "& > div": {
-        width: "20%",
-        height: "6px",
-        marginLeft: "1rem",
-        background: palette.common.black.main,
-        marginBottom: constants.generalUnit * 4,
-        [breakpoints.down('md')]: {
-          marginBottom: constants.generalUnit,
-        },
-        [breakpoints.down('sm')]: {
-          display: "none",
-        }
-      },
-    },
-    finalConceptContainer: {
-      display: "flex",
-      maxWidth: "100vw",
-      margin: "4rem 0",
-      [breakpoints.down('md')]: {
-        maxWidth: "100%",
-        justifyContent: "center",
-        margin: "1rem 0",
-      },
-      [breakpoints.down('sm')]: {
-        maxWidth: "100%",
-        margin: "1rem 0",
-      },
-      "& > img": {
-        [breakpoints.down('md')]: {
-          maxWidth: "225px",
-        },
-        [breakpoints.down('sm')]: {
-          flexDirection: "column",
-        }
-      },
-    },
   })
 })
 
@@ -218,32 +116,40 @@ const MetaDetail: React.FC = () => {
         <div className={classes.wrapper}>
           <Grid container className={classes.contentContainer}>
             <div>
-              <h1 className={classes.title}>Meta-alert</h1>
+              <p className={classes.title}>Meta-alert</p>
               <br></br>
               <p className={classes.subtitleText}>Notifications for the Metamask wallet</p>
+            </div>
+            <div className={classes.summaryWrapper}>
               <div className={classes.imgContainer}>
+                <img src="/graphics/metaalert/meta.png" className={classes.firstMockupImg} alt="Metamask notifications design that includes snap notifications and activity notifications by Thomas Amiri" />
+              </div>
+              <div className={classes.summaryTextWrapper}>
+                <p className={classes.subHeading}>Summary</p>
+                <p className={classes.bodyText}>
+                  Wallets are key web3 portals for users and their functionality will only increase as they integrate more applications. For many of these apps the wallet is the only point of contact, meaning alerts of all kinds will have to exist. I set out to imagine some of these in the Metamask browser wallet.
+              </p>
+                <p className={classes.bodyText}>*This is concept work that is not affiliated with the official product</p>
               </div>
             </div>
-            <div>
-              <p className={classes.subtitleTextLight}>*This is concept work that is not affiliated with the official product</p>
-              <p className={classes.subHeading}>Summary</p>
-              <p className={classes.bodyText}>
-                Wallets are key web3 portals for users and their functionality will only increase as they integrate more applications. For many of these apps the wallet is the only point of contact, meaning alerts of all kinds will have to exist. I set out to imagine some of these in the Metamask browser wallet.
+            <div className={classes.summaryWrapper}>
+              <div className={classes.imgContainer}>
+                <img src="/graphics/metaalert/foxImg.png" className={classes.firstMockupImg} alt="Metamask Fox Notifications Design" />
+              </div>
+              <div className={classes.summaryTextWrapper}>
+                <p className={classes.subHeading}>Context</p>
+                <p className={classes.bodyText}>
+                  🎉 Metamask recently hit its 1 millionth user milestone, cementing itself as one of blockchain’s most popular gateways. As a frequent user I’ve wished for certain notifications more than once. After doing some research I discovered more demand for alerts from every kind of user in the crypto space. I also got some sense of the Metamask roadmap and its big upcoming plugin system called Snaps.
               </p>
-            </div>
-            <div>
-              <p className={classes.subHeading}>Context</p>
-              <p className={classes.bodyText}>
-                Metamask recently hit its 1 millionth user milestone, cementing itself as one of blockchain’s most popular gateways. As a frequent user I’ve wished for certain notifications more than once. After doing some research I discovered more demand for alerts from every kind of user in the crypto space. I also got some sense of the Metamask roadmap and its big upcoming plugin system called Snaps.
+                <p className={classes.subHeading}>Challenges</p>
+                <p className={classes.bodyText}>
+                  The wallet is regularly processing transactions and interacting with all kinds of dapps but this activity is rarely communicated except in network logs. User’s are left wondering about the status of transactions and other web3 events.
               </p>
+              </div>
             </div>
-            <div>
-              <p className={classes.subHeading}>Challenges</p>
-              <p className={classes.bodyText}>
-                The wallet is regularly processing transactions and interacting with all kinds of dapps but this activity is rarely communicated except in network logs. User’s are left wondering about the status of transactions and other web3 events.
-              </p>
-            </div>
-            <div>
+            
+
+            {/* <div>
               <p className={classes.subHeading}>The Design Process</p>
               <p className={classes.bodyText}>
                 I got a lot of insight from the feature discussions on the Metamask Github and was sure I wanted to keep my design aligned with the Snap plugin roadmap. This helped me differentiate between two types of alerts: system alerts and plugin alerts. The former were global to all the wallets in your Metamask, while the latter were local to a specific address.
@@ -256,7 +162,7 @@ const MetaDetail: React.FC = () => {
             <p className={classes.subHeading}>Wireframes</p>
             <p className={classes.bodyText}>
               Once I established the context of alerts and their structure I hopped into wire framing. From paper sketches I worked into high fidelity mock ups. Metamask is already very compact as a browser plugin so it was a challenge to find an optimal layout without cluttering the UI or overwhelming the user.
-              </p>
+              </p> */}
             <div>
               <p className={classes.subHeading}>Final Concept</p>
               <p className={classes.bodyText}>
