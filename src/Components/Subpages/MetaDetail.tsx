@@ -2,6 +2,7 @@ import React from 'react'
 import Section from "../Modules/Section";
 import { createStyles, ITheme, makeStyles } from "@chainsafe/common-theme";
 import { Grid } from "@chainsafe/common-components";
+import Slider from "../Modules/Slider";
 
 const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: ITheme) => {
 
@@ -147,8 +148,8 @@ const MetaDetail: React.FC = () => {
               </p>
               </div>
             </div>
-            
 
+            <Slider />
             {/* <div>
               <p className={classes.subHeading}>The Design Process</p>
               <p className={classes.bodyText}>

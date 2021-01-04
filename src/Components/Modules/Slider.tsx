@@ -1,24 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   createStyles, ITheme, makeStyles
 } from "@chainsafe/common-theme";
+import { BiRightArrowCircle, BiLeftArrowCircle } from "react-icons/bi";
 
 const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: ITheme) => {
   return createStyles({
     container: {
-      width: "100%",
-      height: constants.generalUnit * 10,
-      color: "#262626",
+      background: palette.common.black.main,
+      position: "relative",
+      height: "100vh",
+    },
+    slideWrapper: {
       display: "flex",
-      alignItems: "center",
       justifyContent: "center",
-      zIndex: zIndex?.layer4,
-      [breakpoints.down('sm')]: {
-        padding: "none",
+      flexDirection: "column",
+      opacity: 0,
+      transitionDuration: "1s ease",
+      "&:active": {
+        opacity: 1,
+      },
+      "& > img": {
+        maxWidth: "80%",
       }
     },
-    chevron: {
-      width: "35px",
+    textWrapper: {
+      display: "flex",
+      width: "100%",
+    },
+    icon: {
+      position: "absolute",
+      top: "50%",
+      color: "#fff",
+      cursor: "pointer",
+      userSelect: "none",
+      fontSize: constants.generalUnit * 4,
+      zIndex: zIndex?.layer3,
+      "&:first-of-type": {
+        left: constants.generalUnit * 4,
+      },
+      "&:nth-of-type(2)": {
+        right: constants.generalUnit * 4,
+      },
     }
   })
 })
@@ -47,17 +70,38 @@ const slides = [
 const Slider: React.FC = () => {
 
   const classes = useStyles();
+  const [current, setCurrent] = useState(0);
+  const length = slides.length;
+
+  const nextSlide = () => {
+    setCurrent(current === length - 1 ? 0 : current + 1)
+  }
+
+  const prevSlide = () => {
+    setCurrent(current === 0 ? length - 1 : current - 1)
+  }
+
+  if (!Array.isArray(slides) || slides.length <= 0) {
+    return null;
+  }
+  console.log(current);
 
   return (
-    <div>
+    <div className={classes.container}>
+      <BiLeftArrowCircle onClick={prevSlide} className={classes.icon} />
+      <BiRightArrowCircle onClick={nextSlide} className={classes.icon} />
       {slides.map((slide, index) =>
       (
-        <div key={index}>
-          <img src={slide.img} />
-          <div>
-            <p>{slide.title}</p>
-            <p>{slide.caption}</p>
-          </div>
+        <div className={classes.slideWrapper} key={index}>
+          {index === current && (
+            <>
+              <img src={slide.img} />
+              <div className={classes.textWrapper}>
+                <p>{slide.title}</p>
+                <p>{slide.caption}</p>
+              </div>
+            </>
+          )}
         </div>
       )
       )}
