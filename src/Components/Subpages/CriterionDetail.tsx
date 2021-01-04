@@ -97,34 +97,25 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       }
     },
     link: {
-      fontWeight: "normal",
+      fontWeight: "bolder",
       textDecoration: "none",
-      fontSize: "42px",
+      fontSize: "24px",
       transition: "all 0.3s ease-out",
+      color: palette.common.black.main,
       "&:hover": {
-        color: palette.primary.main,
+        color: palette.additional['geekblue'][6],
       },
       "&:active": {
-        color: palette.primary.light,
+        color: palette.additional['geekblue'][6],
       },
-      [breakpoints.down('md')]: {
-        fontSize: "16px",
-        lineHeight: "24px",
-        fontWeight: "bolder",
-      }
-    },
-    mockupContainer: {
-      display: "flex",
-      maxWidth: "100vw",
-      margin: "4rem 0",
-      [breakpoints.down('lg')]: {
-        width: "100%",
-        maxWidth: "100%",
-      }
-
     },
     mockup: {
       width: "100%",
+      marginBottom: "2rem",
+      [breakpoints.down('sm')]: {
+        width: "100%",
+        height: "auto",
+      },
     },
   })
 })
@@ -165,9 +156,7 @@ const CriterionDetail: React.FC = () => {
                 The existing browse page offers identical rows of collections which makes it hard to know where to start searching. Themed collections are indistinguishable from more general categories like “continue watching” and “my list”. It’s hard to get a quick sense of the depth of content––there’s the option to “view all” but this takes you to another page. Instead of signalling to me different kinds of content, the rows register as noise.
               </p>
             </div>
-            <div className={classes.mockupContainer}>
-              <img src="/graphics/criterion/old-ui.png" className={classes.mockup} alt="" />
-            </div>
+            <img src="/graphics/criterion/old-ui.png" className={classes.mockup} alt="Current criterion UI design as of Dec 2019" />
             <div>
               <p className={classes.subHeading}>The Design Process</p>
               <p className={classes.bodyText}>
@@ -180,15 +169,9 @@ const CriterionDetail: React.FC = () => {
                 I experimented with grids, drop-downs, and different kinds of tile components. These were all unsatisfactory. Finally I realized cards would combine a lot of the goals. They would have eye-catching pictures, compact the layout, and work well in a responsive environment.
               </p>
             </div>
-            <div className={classes.mockupContainer}>
-              <img src="/graphics/criterion/mock1.gif" className={classes.mockup} alt="" />
-            </div>
-            <div className={classes.mockupContainer}>
-              <img src="/graphics/criterion/mock2.png" className={classes.mockup} alt="" />
-            </div>
-            <div className={classes.mockupContainer}>
-              <img src="/graphics/criterion/mock3.png" className={classes.mockup} alt="" />
-            </div>
+            <img src="/graphics/criterion/mock1.gif" className={classes.mockup} alt="" />
+            <img src="/graphics/criterion/mock2.png" className={classes.mockup} alt="" />
+            <img src="/graphics/criterion/mock3.png" className={classes.mockup} alt="" />
 
           </Grid>
           <div className={classes.linkWrapper}>

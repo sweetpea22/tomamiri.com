@@ -21,19 +21,18 @@ const useStyles = makeStyles(({ breakpoints, palette }: ITheme) => {
       display: "flex",
       flexDirection: "column",
       paddingBottom: "5rem",
-      [breakpoints.up('md')]: {
-      },
       [breakpoints.up('lg')]: {
         justifyContent: "center",
         alignItems: "center",
       },
-
     },
     posterWrapper: {
       display: "flex",
       flexWrap: "wrap",
       [breakpoints.down('md')]: {
         flexDirection: "column",
+        flexWrap: "nowrap",
+        width: "100%",
       },
       "& > img": {
         padding: "1rem",
@@ -41,6 +40,14 @@ const useStyles = makeStyles(({ breakpoints, palette }: ITheme) => {
           width: "100%",
         }
       }
+    },
+    noFlexPosterWrapper: {
+      [breakpoints.down('md')]: {
+        display: "flex",
+        flexDirection: "column",
+        flexWrap: "nowrap",
+        width: "100%",
+      },
     },
     linkWrapper: {
       display: "flex",
@@ -55,21 +62,17 @@ const useStyles = makeStyles(({ breakpoints, palette }: ITheme) => {
       }
     },
     link: {
-      fontWeight: "normal",
+      fontWeight: "bolder",
       textDecoration: "none",
-      fontSize: "42px",
+      fontSize: "24px",
       transition: "all 0.3s ease-out",
+      color: palette.common.black.main,
       "&:hover": {
-        color: palette.primary.main,
+        color: palette.additional['geekblue'][6],
       },
       "&:active": {
-        color: palette.primary.light,
+        color: palette.additional['geekblue'][6],
       },
-      [breakpoints.down('md')]: {
-        fontSize: "16px",
-        lineHeight: "24px",
-        fontWeight: "bolder",
-      }
     },
   })
 })
@@ -100,7 +103,7 @@ const PosterDetail: React.FC = () => {
               <img src="/graphics/posters/music-poster3.png" alt="poster" />
               <img src="/graphics/posters/design-week1.png" alt="poster" />
             </div>
-            <div>
+            <div className={classes.noFlexPosterWrapper}>
               <img src="/graphics/posters/event-poster.png" alt="poster" />
               <img src="/graphics/posters/music-poster2.png" alt="poster" />
             </div>
@@ -109,7 +112,7 @@ const PosterDetail: React.FC = () => {
             </div>
           </Grid>
           <div className={classes.linkWrapper}>
-            <a href='/posters'>
+            <a href='/meta-alert'>
               <p className={classes.link}>Check out next project &gt;</p>
             </a>
           </div>

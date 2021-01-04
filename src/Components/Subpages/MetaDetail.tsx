@@ -159,21 +159,17 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       }
     },
     link: {
-      fontWeight: "normal",
+      fontWeight: "bolder",
       textDecoration: "none",
-      fontSize: "42px",
+      fontSize: "24px",
       transition: "all 0.3s ease-out",
+      color: palette.common.black.main,
       "&:hover": {
-        color: palette.primary.main,
+        color: palette.additional['geekblue'][6],
       },
       "&:active": {
-        color: palette.primary.light,
+        color: palette.additional['geekblue'][6],
       },
-      [breakpoints.down('md')]: {
-        fontSize: "16px",
-        lineHeight: "24px",
-        fontWeight: "bolder",
-      }
     },
   })
 })

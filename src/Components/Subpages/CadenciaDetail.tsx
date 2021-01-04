@@ -97,32 +97,19 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       }
     },
     link: {
-      fontWeight: "normal",
+      fontWeight: "bolder",
       textDecoration: "none",
-      fontSize: "42px",
+      fontSize: "24px",
       transition: "all 0.3s ease-out",
+      color: palette.common.black.main,
       "&:hover": {
-        color: palette.primary.main,
+        color: palette.additional['geekblue'][6],
       },
       "&:active": {
-        color: palette.primary.light,
+        color: palette.additional['geekblue'][6],
       },
-      [breakpoints.down('md')]: {
-        fontSize: "16px",
-        lineHeight: "24px",
-        fontWeight: "bolder",
-      }
     },
-    mockupContainer: {
-      display: "flex",
-      maxWidth: "100vw",
-      margin: "4rem 0",
-      [breakpoints.down('lg')]: {
-        width: "100%",
-        maxWidth: "100%",
-      }
 
-    },
   })
 })
 
@@ -176,7 +163,7 @@ const CadenciaDetail: React.FC = () => {
               </p>
             </div>
 
-            <iframe title="Cadencia Video" width="80%" height="500" src="https://www.youtube.com/embed/7sX5T9b937o" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+            <iframe title="Cadencia Video" width="100%" height="500" src="https://www.youtube.com/embed/7sX5T9b937o" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
           </Grid>
           <div className={classes.linkWrapper}>

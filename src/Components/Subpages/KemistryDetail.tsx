@@ -10,7 +10,6 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       maxWidth: "2560px",
       display: "flex",
       background: "#ddd",
-
       paddingTop: "10vh",
       margin: "0% 10% 0 10%",
       flexDirection: "column",
@@ -55,6 +54,9 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       alignItems: "center",
       "& > img": {
         maxWidth: "60%",
+        [breakpoints.down('md')]: {
+          maxWidth: "100%",
+        }
       },
       marginTop: constants.generalUnit * 8,
       [breakpoints.down("md")]: {
@@ -104,51 +106,26 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       }
     },
     link: {
-      fontWeight: "normal",
+      fontWeight: "bolder",
       textDecoration: "none",
-      fontSize: "42px",
+      fontSize: "24px",
       transition: "all 0.3s ease-out",
+      color: palette.common.black.main,
       "&:hover": {
-        color: palette.primary.main,
+        color: palette.additional['geekblue'][6],
       },
       "&:active": {
-        color: palette.primary.light,
+        color: palette.additional['geekblue'][6],
       },
-    },
-    mockupContainer: {
-      display: "flex",
-      maxWidth: "100vw",
-      margin: "4rem 0"
     },
     mockup: {
-      maxWidth: "100%",
-    },
-    captionContainer: {
-      display: "flex",
-      flexDirection: "column",
-      "& > p": {
-        margin: "0 3rem 2rem 1rem",
-        maxWidth: "300px",
-        [breakpoints.down('sm')]: {
-          marginLeft: "1rem",
-          fontSize: "16px",
-          lineHeight: "24px",
-          maxWidth: "40%",
-        }
-      },
-      "& > div": {
-        width: "20%",
-        height: "6px",
-        marginLeft: "1rem",
-        background: palette.common.black.main,
-        marginBottom: constants.generalUnit * 4,
-        [breakpoints.down('sm')]: {
-          marginLeft: "1rem",
-          marginBottom: constants.generalUnit * 2,
-        }
+      width: "100%",
+      marginBottom: "2rem",
+      [breakpoints.down('sm')]: {
+        width: "100%",
+        height: "auto",
       },
     },
-
   })
 })
 
@@ -207,12 +184,9 @@ const KemistryDetail: React.FC = () => {
                 The main work space has multiple arrangement areas to isolate audio channels. The chat box could be draggable to maximize fluid communication between collaborators. In the profile page, easily toggle projects as private/public and get a view of friend’s activity. Upload samples and sounds to Soundstock and exchange via your go-to stable coin.
                   </p>
             </div>
-            <div className={classes.mockupContainer}>
-              <img src="/graphics/kemistry/secondlast.png" className={classes.mockup} alt="" />
-            </div>
-            <div className={classes.mockupContainer}>
-              <img src="/graphics/kemistry/lastmock.png" className={classes.mockup} alt="" />
-            </div>
+            <img src="/graphics/kemistry/secondlast.png" className={classes.mockup} alt="" />
+            <img src="/graphics/kemistry/lastmock.png" className={classes.mockup} alt="" />
+
           </Grid>
           <div className={classes.linkWrapper}>
             <a href='/criterion-redesign'>
