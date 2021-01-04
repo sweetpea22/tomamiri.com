@@ -1,7 +1,7 @@
 import React from 'react'
 import Section from "../Modules/Section";
 import { createStyles, ITheme, makeStyles } from "@chainsafe/common-theme";
-import { Grid, } from "@chainsafe/common-components";
+import { Grid } from "@chainsafe/common-components";
 
 const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
 
@@ -82,30 +82,30 @@ const PosterDetail: React.FC = () => {
         <div className={classes.wrapper}>
           <Grid container className={classes.contentContainer}>
             <div className={classes.posterWrapper}>
-              <img src="/graphics/posters/blob.png" />
-              <img src="/graphics/posters/film-poster.png" />
+              <img src="/graphics/posters/blob.png" alt="poster" />
+              <img src="/graphics/posters/film-poster.png" alt="poster" />
             </div>
             <div className={classes.posterWrapper}>
-              <img src="/graphics/posters/film-poster2.png" />
-              <img src="/graphics/posters/blaise.png" />
+              <img src="/graphics/posters/film-poster2.png" alt="poster" />
+              <img src="/graphics/posters/blaise.png" alt="poster" />
             </div>
             <div className={classes.posterWrapper}>
-              <img src="/graphics/posters/aphorism.png" />
-              <img src="/graphics/posters/design-week2.png" />
+              <img src="/graphics/posters/aphorism.png" alt="poster" />
+              <img src="/graphics/posters/design-week2.png" alt="poster" />
             </div>
             <div className={classes.posterWrapper}>
-              <img src="/graphics/posters/eventposter.png" />
+              <img src="/graphics/posters/eventposter.png" alt="poster" />
             </div>
             <div className={classes.posterWrapper}>
-              <img src="/graphics/posters/music-poster3.png" />
-              <img src="/graphics/posters/design-week1.png" />
+              <img src="/graphics/posters/music-poster3.png" alt="poster" />
+              <img src="/graphics/posters/design-week1.png" alt="poster" />
             </div>
             <div>
-              <img src="/graphics/posters/event-poster.png" />
-              <img src="/graphics/posters/music-poster2.png" />
+              <img src="/graphics/posters/event-poster.png" alt="poster" />
+              <img src="/graphics/posters/music-poster2.png" alt="poster" />
             </div>
             <div className={classes.posterWrapper}>
-              <img src="/graphics/posters/event-poster2.png" />
+              <img src="/graphics/posters/event-poster2.png" alt="poster" />
             </div>
           </Grid>
           <div className={classes.linkWrapper}>

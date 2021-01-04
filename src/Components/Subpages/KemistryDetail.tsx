@@ -1,7 +1,7 @@
 import React from 'react'
 import Section from "../Modules/Section";
 import { createStyles, ITheme, makeStyles } from "@chainsafe/common-theme";
-import { Grid, Link, useHistory } from "@chainsafe/common-components";
+import { Grid, useHistory } from "@chainsafe/common-components";
 
 const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: ITheme) => {
 

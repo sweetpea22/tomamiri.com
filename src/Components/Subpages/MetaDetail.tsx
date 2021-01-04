@@ -257,11 +257,11 @@ const MetaDetail: React.FC = () => {
               </div>
             </div>
           </Grid>
-        </div>
-        <div className={classes.linkWrapper}>
-          <a href='/kemistry'>
-            <p className={classes.link}>Check out next project &gt;</p>
-          </a>
+          <div className={classes.linkWrapper}>
+            <a href='/kemistry'>
+              <p className={classes.link}>Check out next project &gt;</p>
+            </a>
+          </div>
         </div>
       </Section>
     </div>

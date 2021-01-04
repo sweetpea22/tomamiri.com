@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {
-  createStyles, ITheme, makeStyles, useMediaQuery
+  createStyles, ITheme, makeStyles
 } from "@chainsafe/common-theme";
 import { Grid, Typography } from "@chainsafe/common-components";
 import menuButton from "../Subpages/svg/burger.svg";
@@ -71,14 +71,14 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       zIndex: 1000,
       display: "flex",
       width: "100%",
-      marginTop: "20vh",
+      marginTop: "10vh",
       height: "auto",
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
     },
     mobileLinkWrapper: {
-      marginTop: "2rem",
+      marginTop: "1.7rem",
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
@@ -129,7 +129,7 @@ const NavBar: React.FC = () => {
         {(isNavVisible) && (
           <div className={classes.wrapper}>
 
-            <img src={menuButton} alt="menuIcon" onClick={toggleNav} style={{ float: "right", position: "absolute", top: "4%", right: "32px" }} />
+            <img src={menuButton} alt="menuIcon" onClick={toggleNav} style={{ float: "right", position: "absolute", top: "6%", right: "32px" }} />
             <ul className={classes.mobileLinkContainer}>
               <div className={classes.mobileLinkWrapper} >
                 <a className={classes.mobileLink} href="/">Home</a>
