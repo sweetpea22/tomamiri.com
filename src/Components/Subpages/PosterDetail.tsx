@@ -3,7 +3,7 @@ import Section from "../Modules/Section";
 import { createStyles, ITheme, makeStyles } from "@chainsafe/common-theme";
 import { Grid } from "@chainsafe/common-components";
 
-const useStyles = makeStyles(({ breakpoints, palette, constants }: ITheme) => {
+const useStyles = makeStyles(({ breakpoints, palette }: ITheme) => {
 
   return createStyles({
     wrapper: {

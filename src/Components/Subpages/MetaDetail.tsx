@@ -229,14 +229,14 @@ const MetaDetail: React.FC = () => {
             </div>
             <div className={classes.finalWrapper}>
               <div className={classes.finalMockupWrapper}>
-                <img src="/graphics/metaalert/final1.png" />
+                <img src="/graphics/metaalert/final1.png" alt="final mockup of metamask notification concept design" />
                 <div className={classes.finalTextWrapper}>
                   <p className={classes.finalBodyText}>Flip between your funds and your plugins</p>
                   <p className={classes.finalBodyText}>Know when your wallet processes a transaction</p>
                 </div>
               </div>
               <div className={classes.finalMockupWrapper}>
-                <img src="/graphics/metaalert/final2.png" />
+                <img src="/graphics/metaalert/final2.png" alt="final mockup of metamask notification concept design" />
                 <div className={classes.finalTextWrapper}>
                   <p className={classes.finalBodyText}>Be notified of your other persona’s activity</p>
                 </div>
@@ -244,13 +244,13 @@ const MetaDetail: React.FC = () => {
             </div>
             <div className={classes.finalWrapper}>
               <div className={classes.finalMockupWrapper}>
-                <img src="/graphics/metaalert/final3.png" />
+                <img src="/graphics/metaalert/final3.png" alt="final mockup of metamask notification concept design" />
                 <div className={classes.finalTextWrapper}>
                   <p className={classes.finalBodyText}>Conveniently view dapp communications</p>
                 </div>
               </div>
               <div className={classes.finalMockupWrapper}>
-                <img src="/graphics/metaalert/final4.png" />
+                <img src="/graphics/metaalert/final4.png" alt="final mockup of metamask notification concept design" />
                 <div className={classes.finalTextWrapper}>
                   <p className={classes.finalBodyText}>Control what dapps connect to your wallet and manage their permissions</p>
                 </div>
