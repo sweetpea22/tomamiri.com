@@ -1,1 +1,1 @@
-<img src="/preview.png">
+<img src="https://sweetpea22-team-bucket.storage.fleek.co/Screen%20Shot%202021-01-04%20at%203.59.40%20PM.png">
