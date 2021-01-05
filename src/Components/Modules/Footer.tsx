@@ -17,7 +17,17 @@ const useStyles = makeStyles(({ breakpoints, zIndex, constants }: ITheme) => {
         padding: "none",
       },
       "& > p": {
-        color: "#333"
+        color: "#333",
+        "& > a": {
+          color: "#333",
+          transition: "all 0.5s",
+          "&:visited": {
+            color: "#5757f5",
+          },
+          "&:hover": {
+            color: "#5757F5",
+          }
+        }
       },
     },
     chevron: {
@@ -33,7 +43,7 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
   return (
     <footer className={classes.container}>
-      <p>&copy; {currentYear} TOM AMIRI made by @sweetpea22 (twitter)</p>
+      <p>&copy; {currentYear} TOM AMIRI made by <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/sweetpea22">sweetpea22</a></p>
     </footer >
   );
 };
