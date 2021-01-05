@@ -53,6 +53,12 @@ const useMyStyles = () => {
       headshotWrapper: {
         marginTop: "4rem",
         maxWidth: "30%",
+        [breakpoints.down(2200)]: {
+          maxWidth: "33%",
+          position: "absolute",
+          top: "5%",
+          right: "10%",
+        },
         [breakpoints.down('sm')]: {
           display: "none",
         }
@@ -64,6 +70,9 @@ const useMyStyles = () => {
         lineHeight: "32px",
         width: "80%",
         color: palette.common.white.main,
+        [breakpoints.down(2200)]: {
+          maxWidth: 1000,
+        },
         [breakpoints.down('md')]: {
           fontSize: "16px",
           lineHeight: "32px",
@@ -76,6 +85,11 @@ const useMyStyles = () => {
         fontFamily: "Inter",
         color: palette.common.white.main,
         width: "100%",
+        [breakpoints.down(2200)]: {
+          fontSize: "80px",
+          lineHeight: "80px",
+          width: "80%",
+        },
         [breakpoints.down('md')]: {
           fontSize: "40px",
           lineHeight: "48px",

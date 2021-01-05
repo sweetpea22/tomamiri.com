@@ -90,7 +90,7 @@ const slides = [
     img: "/graphics/metaalert/process1.png",
     title: "Design Process 🔍",
     caption: "I got a lot of insight from the feature discussions on the Metamask Github and was sure I wanted to keep my design aligned with the Snap plugin roadmap. This helped me differentiate between two types of alerts: system alerts and plugin alerts. The former were global to all the wallets in your Metamask, while the latter were local to a specific address.",
-    altText: "Github Issue https://github.com/MetaMask/metamask-snaps-beta/issues/106 "
+    altText: "Github Issue https://github.com/MetaMask/metamask-snaps-beta/issues/106"
   },
   {
     img: "/graphics/metaalert/process2.png",
