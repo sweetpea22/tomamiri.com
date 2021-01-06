@@ -102,7 +102,7 @@ const Contact: React.FC = () => {
       <Section>
         <div className={classes.wrapper}>
           <Grid container className={classes.contentContainer}>
-            <Grid item xs={3}>
+            <Grid item xs={3} xl={2}>
               <img className={classes.img} src="/graphics/landing/phone.png" alt="3d glass phone by thomas amiri" />
             </Grid>
             <Grid item xs={5} className={classes.textWrapper}>
