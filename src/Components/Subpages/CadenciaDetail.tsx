@@ -63,10 +63,11 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       display: "flex",
       justifyItems: "center",
       alignItems: "center",
-      margin: "1rem 0",
+      margin: 0,
       "& > img": {
         [breakpoints.down('lg')]: {
           width: "100%",
+          maxWidth: "40%",
         }
       }
     },
@@ -77,7 +78,7 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       color: palette.common.black.main,
       marginBottom: constants.generalUnit * 4,
       width: "100%",
-      [breakpoints.up('lg')]: {
+      [breakpoints.up('md')]: {
         maxWidth: "750px",
       },
       [breakpoints.up('xl')]: {
@@ -126,9 +127,9 @@ const CadenciaDetail: React.FC = () => {
             <div>
               <h1 className={classes.title}>Cadencia</h1>
               <br></br>
-              <p className={classes.subtitleText}>A data project for Filecoin’s hackathon</p>
+              <p className={classes.subtitleText}>A data project for Filecoin (hackathon)</p>
               <div className={classes.imgContainer}>
-                <img src="/graphics/landing/hackfs.png" alt="hackfs logo from ethglobal" />
+                <img src="/graphics/landing/hackfs.png" alt="Thomas Amiri's submission for HackFS" />
               </div>
             </div>
             <div>

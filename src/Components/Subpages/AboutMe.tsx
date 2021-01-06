@@ -53,9 +53,6 @@ const useMyStyles = () => {
       headshotWrapper: {
         marginTop: "4rem",
         maxWidth: "40%",
-        [breakpoints.down('sm')]: {
-          display: "none",
-        }
       },
       bodyText: {
         fontSize: "20px",

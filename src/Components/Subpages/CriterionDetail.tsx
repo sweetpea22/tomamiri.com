@@ -57,13 +57,6 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       fontWeight: "bold",
       marginBottom: constants.generalUnit,
     },
-    subtitleTextLight: {
-      fontSize: "28px",
-      lineHeight: "38px",
-      fontWeight: "lighter",
-      maxWidth: "630px",
-      marginBottom: constants.generalUnit * 2,
-    },
     imgContainer: {
       display: "flex",
       justifyItems: "center",
@@ -77,7 +70,7 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       color: palette.common.black.main,
       marginBottom: constants.generalUnit * 4,
       width: "100%",
-      [breakpoints.up('lg')]: {
+      [breakpoints.up('md')]: {
         maxWidth: "750px",
       },
       [breakpoints.up('xl')]: {
@@ -138,7 +131,7 @@ const CriterionDetail: React.FC = () => {
               </div>
             </div>
             <div>
-              <p className={classes.subtitleTextLight}>*This is concept work that is not affiliated with the official product</p>
+              <p className={classes.bodyText}>*This is concept work that is not affiliated with the official product</p>
               <p className={classes.subHeading}>Summary</p>
               <p className={classes.bodyText}>
                 The Criterion Channel has some of the best content for streaming but navigating its UI is frustrating. So I saw an opportunity to optimize content discovery and highlight the channel’s amazing curation with a reimagined UI. Ideally, a change like this would be A/B tested against the existing interface while comparing the size of user’s watchlists.

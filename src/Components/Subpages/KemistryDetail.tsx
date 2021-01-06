@@ -94,8 +94,8 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       }
     },
     linkWrapper: {
-      [breakpoints.up('lg')]: {
-        marginTop: "10vh",
+      [breakpoints.up('md')]: {
+        marginTop: "5vh",
         display: "flex",
         justifyContent: "flex-end",
       },
