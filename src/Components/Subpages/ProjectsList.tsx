@@ -19,8 +19,12 @@ const useStyles = makeStyles(({ breakpoints, palette, zIndex, constants }: IThem
       [breakpoints.up('xl')]: {
         margin: 0,
         position: "relative",
-        left: "50%",
-        transform: "translate(-50%)",
+        paddingTop: 0,
+      },
+      [breakpoints.up(3800)]: {
+        left: 0,
+        transform: "none",
+        maxWidth: "none",
       },
     },
     contentContainer: {

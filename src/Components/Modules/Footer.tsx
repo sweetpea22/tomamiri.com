@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
   return (
     <footer className={classes.container}>
-      <p>&copy; {currentYear} TOM AMIRI made by <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/sweetpea22">sweetpea22</a></p>
+      <p>&copy; {currentYear} TOM AMIRI made by <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/moodypea99">Rain</a></p>
     </footer >
   );
 };

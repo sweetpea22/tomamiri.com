@@ -20,8 +20,6 @@ const useMyStyles = () => {
         [breakpoints.up('xl')]: {
           margin: 0,
           position: "relative",
-          left: "50%",
-          transform: "translate(-50%)",
           minHeight: "50vh",
         },
       },
@@ -118,8 +116,7 @@ const useMyStyles = () => {
         minHeight: "20vh",
         zIndex: zIndex?.layer3,
         [breakpoints.up('xl')]: {
-          left: "50%",
-          transform: "translateX(-50%)",
+          width: "100%",
           bottom: "auto",
         }
       }

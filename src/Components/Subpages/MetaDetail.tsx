@@ -189,7 +189,7 @@ const MetaDetail: React.FC = () => {
             </div>
             <div className={classes.summaryWrapper}>
               <div className={classes.imgContainer}>
-                <img src="/graphics/metaalert/meta.png" className={classes.firstMockupImg} alt="Metamask notifications design that includes snap notifications and activity notifications by Thomas Amiri" />
+                <img src="/graphics/metaalert/meta-gif-3.gif" className={classes.firstMockupImg} alt="Metamask notifications design that includes snap notifications and activity notifications by Thomas Amiri" />
               </div>
               <div className={classes.summaryTextWrapper}>
                 <p className={classes.subHeading}>Summary</p>
