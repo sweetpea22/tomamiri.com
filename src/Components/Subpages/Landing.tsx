@@ -126,7 +126,7 @@ const Landing: React.FC = () => {
           <Grid container xs={12} className={classes.contentContainer}>
             <div className={classes.titleWrapper}>
               <h1 className={classes.jumboText}>Web3</h1>
-              <h1 className={classes.jumboText}>Ethereum</h1>
+              <h1 className={classes.jumboText}>Blockchain</h1>
               <h1 className={classes.jumboText}>Product Design</h1>
               <p className={classes.bodyText}>
                 Hey, I’m Tom. I’m a Toronto-based UI designer with research, UX, communication, and strategy skills. I’m looking to join a fast-paced team in the blockchain ecosystem disrupting some corner of the universe.
