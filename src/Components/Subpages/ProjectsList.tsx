@@ -128,11 +128,11 @@ const ProjectsList: React.FC = () => {
                 <Grid container className={classes.projectContentWrapper}>
                   <div className={classes.projectTextWrapper}>
                     <p>{p.desc}</p>
-                    <a href={`${p.pageUrl}`}>
+                    <a href={`http://tomamiri.com${p.pageUrl}`}>
                       <h1 className={classes.projectTitle}>
                         {p.name}
                         <span>
-                          <a href={`/${p.pageUrl}`} >
+                          <a href={`http://tomamiri.com${p.pageUrl}`}>
                             <img src={smallPageButton} className={classes.projectLink} alt={`Click to access page about ${p.name} by Tom Amiri`} />
                           </a>
                         </span>
