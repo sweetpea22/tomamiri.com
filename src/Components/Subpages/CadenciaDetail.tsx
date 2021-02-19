@@ -164,7 +164,7 @@ const CadenciaDetail: React.FC = () => {
               </p>
             </div>
 
-            <iframe title="Cadencia Video" width="100%" height="500" src="https://www.youtube.com/embed/7sX5T9b937o" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+            <iframe title="Cadencia Video" width="70%" height="500" src="https://www.youtube.com/embed/7sX5T9b937o" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
           </Grid>
           <div className={classes.linkWrapper}>

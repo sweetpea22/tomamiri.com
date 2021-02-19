@@ -5,12 +5,14 @@ import Footer from "../Modules/Footer";
 import ProjectsList from "../Subpages/ProjectsList";
 import Contact from "../Subpages/Contact";
 import FeaturedProject from "../Subpages/FeaturedProject";
+import Paladin from "../Subpages/Paladin";
 
 const HomePage: React.FC = () => {
   return (
     <>
       <NavBar />
       <Landing />
+      <Paladin/>
       <FeaturedProject />
       <ProjectsList />
       <Contact />

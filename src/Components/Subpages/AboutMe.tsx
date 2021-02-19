@@ -50,10 +50,6 @@ const useMyStyles = () => {
           textAlign: "left",
         }
       },
-      headshotWrapper: {
-        marginTop: "4rem",
-        maxWidth: "40%",
-      },
       bodyText: {
         fontSize: "20px",
         fontWeight: 400,
@@ -114,9 +110,6 @@ const About: React.FC = () => {
                 What sets me apart is my sensitivity to both business and user needs, understanding the roadmap while staying open-minded to feedback for better product market fit.
 
               </p>
-            </div>
-            <div className={classes.headshotWrapper}>
-              <img src="/graphics/landing/headshot.png" alt="Thomas Amiri" />
             </div>
           </Grid>
           <img className={classes.transitionGradient} src="/graphics/landing/gradient1.png" alt="gradient from blue to magenta by Tom Amiri" />

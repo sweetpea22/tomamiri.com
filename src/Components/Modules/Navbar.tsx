@@ -117,7 +117,7 @@ const NavBar: React.FC = () => {
         <Grid item justifyContent="center" alignItems="flex-start">
           <Grid container alignItems="center">
             <Typography variant="h4">
-              <a className={classes.brandName} href="/">Thomas Amiri</a>
+              <a className={classes.brandName} href="/">Tom Amiri</a>
             </Typography>
           </Grid>
         </Grid>
@@ -136,6 +136,9 @@ const NavBar: React.FC = () => {
               </div>
               <div className={classes.mobileLinkWrapper} >
                 <a className={classes.mobileLink} href="/about">About</a>
+              </div>
+              <div className={classes.mobileLinkWrapper} >
+                <a className={classes.mobileLink} href="/paladin">Paladin</a>
               </div>
               <div className={classes.mobileLinkWrapper} >
                 <a className={classes.mobileLink} href="/meta-alert">Meta-alert</a>

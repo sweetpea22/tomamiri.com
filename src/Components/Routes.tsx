@@ -7,6 +7,7 @@ import KemistryPage from "./Pages/KemistryPage";
 import MetaPage from "./Pages/MetaPage";
 import CriterionPage from "./Pages/CriterionPage";
 import CadenciaPage from "./Pages/CadenciaPage";
+import PaladinPage from "./Pages/PaladinPage";
 
 export const ROUTE_LINKS = {
   Home: "/",
@@ -16,6 +17,7 @@ export const ROUTE_LINKS = {
   Criterion: "/criterion-redesign",
   Cadencia: "/cadencia",
   Posters: "/posters",
+  Paladin: "/paladin"
 
 }
 
@@ -29,6 +31,7 @@ const Routes = () => {
       <Route exact path={ROUTE_LINKS.Criterion} component={CriterionPage} />
       <Route exact path={ROUTE_LINKS.Cadencia} component={CadenciaPage} />
       <Route exact path={ROUTE_LINKS.Posters} component={PostersPage} />
+      <Route exact path={ROUTE_LINKS.Paladin} component={PaladinPage} />
     </Switch>
   )
 }

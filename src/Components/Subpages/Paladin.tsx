@@ -2,7 +2,7 @@ import React from 'react'
 import Section from "../Modules/Section";
 import { createStyles, ITheme, makeStyles } from "@chainsafe/common-theme";
 import { Grid } from "@chainsafe/common-components";
-import pageButton from "./svg/blackpageButton.svg";
+import pageButton from "./svg/smallPageButton.svg";
 
 
 
@@ -12,15 +12,16 @@ const useMyStyles = () => {
     return createStyles({
       wrapper: {
         display: "flex",
-        background: "#ddd",
+        background: "linear-gradient(0.25turn, #EE0B34, #E7A226)",
         margin: "0",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        [breakpoints.up('lg')]: {
+            paddingTop: "3rem",
+        },
         [breakpoints.up('xl')]: {
-          margin: 0,
           position: "relative",
-          minHeight: "50vh",
         },
       },
       contentContainer: {
@@ -62,7 +63,7 @@ const useMyStyles = () => {
         fontWeight: 400,
         fontFamily: "IBM Plex Mono",
         lineHeight: "30px",
-        color: palette.common.black.main,
+        color: palette.common.white.main,
         textTransform: "uppercase",
         [breakpoints.down('md')]: {
           fontSize: "16px",
@@ -83,16 +84,16 @@ const useMyStyles = () => {
             display: "none",
           },
         },
-        color: palette.common.black.main,
+        color: palette.common.white.main,
         [breakpoints.down('lg')]: {
           fontSize: "60px",
           lineHeight: "72px",
         },
         "&:hover": {
-          color: "#F5861C",
+          color: "#000",
         },
         "&:focus": {
-          color: "#F5861C",
+          color: "#000",
         },
       },
       projectLink: {
@@ -115,48 +116,49 @@ const useMyStyles = () => {
         maxWidth: "100vw",
         minHeight: "20vh",
         zIndex: zIndex?.layer3,
-        marginTop: "-5%",
-        [breakpoints.down('sm')]:{
-          marginTop: "-7%",
-        },
         [breakpoints.up('xl')]: {
           width: "100%",
           bottom: "auto",
-          marginTop: "-10vh",
-        },
+        }
+      }, 
+      titleContainer: {
+        display: "flex",
+        justifyContent: "flex-start",
+        alignItems: "center",   
+      },
+      ethGlobalImg: {
+        maxWidth: "150px",
+        paddingRight: constants.generalUnit * 2,
       }
     })
   })
   return useStyles();
 }
 
-const FeaturedProject: React.FC = () => {
+const Paladin: React.FC = () => {
   const classes = useMyStyles();
   return (
     <>
       <Section>
         <div className={classes.wrapper}>
-          <img className={classes.transitionGradient} src="/graphics/landing/blueblackgradient.png" alt="blue to purple gradient" />
           <Grid container xs={12} className={classes.contentContainer}>
             <div className={classes.titleWrapper}>
-              <p className={classes.bodyText}>
-                Notifications for Metamask (Concept)
-              </p>
-              <a href="/meta-alert">
+                <div className={classes.titleContainer}>
+                    <img className={classes.ethGlobalImg} src="/graphics/landing/ethglobal.png"/>
+                    <p className={classes.bodyText}>
+                    GOVERNANCE AWARD WINNER
+                    </p>
+                </div>
+              <a href="/paladin">
                 <h1 className={classes.jumboText}>
-                  Meta-alert
+                    Paladin
                 <span>
-                    <a href="/meta-alert">
+                    <a href="/paladin">
                       <img className={classes.projectLink} src={pageButton} alt="Click here to access more detail about meta-alert" />
                     </a>
                   </span>
                 </h1>
               </a>
-
-
-            </div>
-            <div className={classes.imgWrapper}>
-              <img src="/graphics/landing/highres-splash.png" alt="3d metal splash" />
             </div>
           </Grid>
         </div>
@@ -165,4 +167,4 @@ const FeaturedProject: React.FC = () => {
   )
 }
 
-export default FeaturedProject
+export default Paladin
