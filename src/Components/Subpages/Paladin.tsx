@@ -144,7 +144,7 @@ const Paladin: React.FC = () => {
           <Grid container xs={12} className={classes.contentContainer}>
             <div className={classes.titleWrapper}>
                 <div className={classes.titleContainer}>
-                    <img className={classes.ethGlobalImg} src="/graphics/landing/ethglobal.png"/>
+                    <img className={classes.ethGlobalImg} src="/graphics/landing/ethglobal.png" alt="EthGlobal logo"/>
                     <p className={classes.bodyText}>
                     GOVERNANCE AWARD WINNER
                     </p>
