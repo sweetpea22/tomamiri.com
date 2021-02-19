@@ -187,7 +187,7 @@ const PaladinDetail: React.FC = () => {
               <p className={classes.subtitleText}>A governance lending protocol</p>
             </div>
             <div className={classes.summaryWrapper}>
-              <img src="/graphics/paladin/p1.png" className={classes.mockup} alt="" />
+              <img src="/graphics/paladin/p1.png" className={classes.mockup} alt="Dark mode UI that shows swap interface for buying and selling voting power" />
               <div className={classes.summaryTextWrapper}>
                 <p className={classes.subHeading}>Summary</p>
                 <p className={classes.bodyText}>
@@ -199,7 +199,7 @@ const PaladinDetail: React.FC = () => {
               </div>
             </div>
             <div className={classes.summaryWrapper}>
-            <img src="/graphics/paladin/p2.png" className={classes.mockup} alt="" />
+            <img src="/graphics/paladin/p2.png" className={classes.mockup} alt="Dark mode UI that shows swap interface for buying and selling voting power" />
             <div className={classes.summaryTextWrapper}>
               <p className={classes.subHeading}>The Design Process</p>
               <br></br>
@@ -210,8 +210,8 @@ const PaladinDetail: React.FC = () => {
             </div>
             </div>
             <div className={classes.flexContainerImages}>
-              <img src="/graphics/paladin/p3.png" className={classes.mockupNoMargin} alt="" />
-              <img src="/graphics/paladin/p4.png" className={classes.mockupNoMargin} alt="" />
+              <img src="/graphics/paladin/p3.png" className={classes.mockupNoMargin} alt="Dark mode UI that shows swap interface for buying and selling voting power" />
+              <img src="/graphics/paladin/p4.png" className={classes.mockupNoMargin} alt="Dark mode UI that shows swap interface for buying and selling voting power" />
             </div>
 
             <div className={classes.summaryWrapper}>
